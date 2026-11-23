@@ -14,10 +14,10 @@
     } catch (e) {}
   })();
 </script>
-<meta name="description" content="依幹部手冊113年版、116社員大會手冊相關(115.10.27修)與法規彙編打造的《遊戲王》3D 決鬥盤卡牌對戰 RPG！專為儲互社專職人員設計，攻略日常內控、年終決算、大會手冊、候選選票與移交清冊六大決鬥之門。" />
+<meta name="description" content="依幹部手冊113年版、116社員大會手冊相關(115.10.27修)與法規彙編打造的 3D 決鬥盤法規卡牌對戰 RPG！專為儲互社專職人員設計，攻略日常內控、年終決算、大會手冊、候選選票與移交清冊六大決鬥之門。" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="儲互社專職決鬥王：跨年結算與116選務大作戰！" />
-<meta property="og:description" content="116選舉年專職實戰卡牌決鬥 RPG｜《遊戲王》3D 決鬥盤對戰、六大移交清冊速查、26項跨年隨身檢核表！" />
+<meta property="og:description" content="116選舉年專職實戰卡牌決鬥 RPG｜3D 決鬥盤法規卡牌對戰、六大移交清冊速查、26項跨年隨身檢核表！" />
 <meta property="og:url" content="https://cu-specialist-rpg.pages.dev/" />
 <meta property="og:image" content="https://cu-specialist-rpg.pages.dev/assets_art/og_cover.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -1194,7 +1194,7 @@
     white-space: nowrap;
   }
   .final-lock-note { margin: 0 0 12px; font-size: 0.92rem; font-weight: 700; color: #5c4d3c; line-height: 1.6; }
-  .final-lock-actions { display: flex; justify-content: flex-end; }
+  .final-lock-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
 
   .relic-showcase-grid {
     display: grid;
@@ -1425,6 +1425,14 @@
   .lc-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; margin-top: 12px; }
   .lc-actions .hud-btn { padding: 9px 14px; font-size: 0.94rem; }
   .lc-actions .hud-btn:not(.gold) { background: #142038; }
+  /* 大廳「移交清冊（選修）」列表 */
+  .lh-lead { margin: 0 0 6px; font-weight: 800; color: #3f2d14; line-height: 1.6; }
+  .lh-reward { margin: 0 0 10px; padding: 8px 12px; border-radius: 10px; background: #fef3c7; border-left: 5px solid #c8963e; color: #5c3d0e; font-weight: 800; line-height: 1.55; }
+  .lh-list { display: grid; gap: 8px; }
+  .lh-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left; padding: 12px 14px; border-radius: 12px; border: 2px solid #c8963e; background: #fffdf7; color: #1f160a; font-weight: 900; font-size: 1rem; cursor: pointer; }
+  .lh-item.got { border-color: #4ade80; background: #f0fdf4; }
+  .lh-cta { flex-shrink: 0; font-size: 0.86rem; color: #9a6516; }
+  .lh-item.got .lh-cta { color: #15803d; }
   .lc-stamp {
     display: inline-block;
     margin: 8px 0 2px;
@@ -3108,7 +3116,7 @@
 
 
   /* =========================================================
-     9. 《遊戲王 Master Duel》3D 決鬥盤主題與卡片反擊連鎖系統
+     9. 3D 決鬥盤主題與卡片反擊連鎖系統
   ========================================================= */
   #titleScreen {
     background: #050a18 !important;
@@ -3389,7 +3397,7 @@
     color: #fde047;
   }
 
-  /* 扇形手牌：遊戲王標準框架（🟣反擊陷阱 / 🟢速攻魔法 / 🟠效果怪獸 / 🔵超量） */
+  /* 扇形手牌：四色牌框（紫／綠／橙／藍，只是外觀） */
   .foil-card.tcg-card {
     background: linear-gradient(165deg, #c66f2b 0%, #9a4b16 100%);
     border: 4px solid #1e293b;
@@ -3541,7 +3549,7 @@
 
 
   /* =========================================================
-     10. 《遊戲王 Duel Links》極簡手機單屏決鬥盤 ＋ 決鬥之門 ＋ 電玩大招系統
+     10. 極簡手機單屏決鬥盤 ＋ 決鬥之門 ＋ 大招系統
   ========================================================= */
   /* --- 決鬥之門選關大廳 (#mapScreen) --- */
   .dl-hud {
@@ -3593,6 +3601,21 @@
   .dl-banner-bar .quest-scroll-text {
     color: #fef08a;
     font-size: 0.98rem;
+  }
+  /* 大廳：快速出擊＋移交清冊（選修）兩顆並排 */
+  .dl-banner-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hud-btn.ledger-hub-btn {
+    background: linear-gradient(180deg, #166534, #0f3d22);
+    border-color: #4ade80;
+    color: #dcfce7;
+  }
+  @media (max-width: 760px) {
+    .dl-banner-actions { width: 100%; }
+    .dl-banner-actions .hud-btn { flex: 1 1 0; min-width: 0; white-space: nowrap; }
   }
   .dl-gate-grid {
     display: grid;
@@ -3737,7 +3760,7 @@
     box-shadow: none;
   }
 
-  /* --- 極簡手機單屏《遊戲王 Duel Links》戰鬥舞台 (#battleScreen) --- */
+  /* --- 極簡手機單屏戰鬥舞台 (#battleScreen) --- */
   #battleScreen {
     background: #040814 !important;
     overflow-y: auto;
@@ -3788,7 +3811,7 @@
     font-size: 0.8rem;
   }
 
-  /* 上方區：對手《遊戲王》第11期怪獸實體卡 + LP 4000 + 挑戰問題氣泡 */
+  /* 上方區：違規怪獸卡 + 剩幾題 + 挑戰問題氣泡 */
   .dl-opponent-zone {
     display: grid;
     grid-template-columns: 164px minmax(0, 1fr);
@@ -3821,7 +3844,7 @@
     100% { transform: scale(1); filter: grayscale(0.45) brightness(0.78); border-color: #00e5ff; }
   }
   .dl-opp-card.boss-ko::after {
-    content: "K.O. 擊破";
+    content: "擊破！";
     position: absolute;
     inset: auto 8% 36%;
     background: rgba(255, 250, 235, 0.92);
@@ -3895,6 +3918,9 @@
     padding: 1px 4px;
     border-radius: 3px;
   }
+  /* 白話版：怪獸卡不再顯示攻擊力／守備力與屬性，只留名字和圖；右邊重點變長時卡片不跟著拉長 */
+  .dl-oc-atk, .dl-oc-attr, .dl-oc-stars { display: none !important; }
+  .dl-opponent-zone > .dl-opp-card { align-self: start; }
 
   .dl-opp-info {
     display: flex;
@@ -3941,6 +3967,10 @@
     font-size: clamp(0.95rem, 1.5vw, 1.12rem);
     line-height: 1.5;
   }
+  /* 答對後的重點：一條規定一行 */
+  .dlg-key-title { color: #14532d; font-weight: 900; }
+  .dlg-key-list { margin: 1px 0 0; padding-left: 1.1em; color: #14532d; font-weight: 800; }
+  .dlg-key-list li { margin: 0; }
 
   /* 中央區：全息對決線 ＋ 我方 LP 4000 ＋ 過關下一回合大按鈕 */
   .dl-clash-bar {
@@ -3992,7 +4022,7 @@
     flex-wrap: wrap;
   }
 
-  /* 下方區：3張擬真《遊戲王》第11期閃卡（含斜紋鑽石 Secret Rare 閃膜） */
+  /* 下方區：3張法規閃卡（含斜紋閃膜） */
   .dl-hand-wrap {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4171,7 +4201,7 @@
   }
 
   /* =========================================================
-     11. 電視《遊戲王》全螢幕 3 階段劇場級技能大招 (#ygoUltTheater)
+     11. 全螢幕 3 階段大招劇場 (#ygoUltTheater，只在每關最後一擊播放)
   ========================================================= */
   #ygoUltTheater {
     position: fixed;
@@ -4218,7 +4248,7 @@
     color: #fff;
   }
 
-  /* 階段 ①：千年神器覺醒光柱 ＋ 決鬥者熱血眼神斜切分鏡 ＋ 3D 巨型翻轉卡片 */
+  /* 階段 ①：光柱 ＋ 決鬥者眼神斜切分鏡 ＋ 3D 巨型翻轉卡片 */
   .ygo-ult-pillar {
     position: absolute;
     left: 50%;
@@ -4514,7 +4544,7 @@
     text-shadow: 0 3px 8px #000;
   }
 
-  /* 階段 ③：對手怪獸巨卡龜裂粉碎 ＋ 電視《遊戲王》經典電子跳錶 LP 框 */
+  /* 階段 ③：對手怪獸巨卡龜裂粉碎 ＋ 計分框 */
   .ygo-ult-target-wrap {
     position: absolute;
     inset: 0;
@@ -4654,7 +4684,7 @@
   <div class="title-crest-wrap">
     <div class="title-edition-ribbon">⚡ 116選舉年 × 幹部手冊113年版 × 115.10.27修章・3D決鬥盤典藏版 ⚡</div>
     <h1 class="game-logo">儲互社專職決鬥王</h1>
-    <div class="game-subtitle">— 跨年結算・116大會手冊・反擊陷阱卡牌決鬥 —</div>
+    <div class="game-subtitle">— 跨年結算・116大會手冊・法規卡牌決鬥 —</div>
   </div>
 
   <div class="title-menu">
@@ -4706,8 +4736,11 @@
 
   <div class="dl-lobby-shell">
     <div class="dl-banner-bar">
-      <div class="quest-scroll-text" id="questHintBar">🧭 決鬥大廳：點選任一座《決鬥之門》召喚王牌卡牌，一擊粉碎違規怪獸！</div>
-      <button class="hud-btn gold" style="padding:7px 14px;" onclick="goNextQuest()">⚡ 快速出擊 ▶</button>
+      <div class="quest-scroll-text" id="questHintBar">🧭 決鬥大廳：挑一道決鬥之門，選對法規牌就能打倒違規怪獸！</div>
+      <div class="dl-banner-actions">
+        <button class="hud-btn gold" style="padding:7px 14px;" onclick="goNextQuest()">⚡ 快速出擊 ▶</button>
+        <button class="hud-btn ledger-hub-btn" id="btnLedgerHub" style="padding:7px 14px;" onclick="openLedgerHub()" title="選修：六大移交清冊點交">📦 移交清冊 0/6</button>
+      </div>
     </div>
     <div class="map-toast" id="mapToast" style="position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:80;">⚡ 歡迎來到決鬥之門！</div>
     <div class="dl-gate-grid" id="duelGateGrid"></div>
@@ -4715,7 +4748,7 @@
 </section>
 
 <!-- =========================================================
-     3. 極簡手機單屏《遊戲王 Duel Links》戰鬥舞台 (Battle Screen)
+     3. 極簡手機單屏戰鬥舞台 (Battle Screen)
 ========================================================= -->
 <section id="battleScreen">
   <div class="battle-bg" id="battleBgImg"></div>
@@ -4726,37 +4759,36 @@
     <!-- 頂部精簡控制列 -->
     <div class="dl-top-bar">
       <div style="display:flex;align-items:center;gap:6px;">
-        <button class="hud-btn" style="padding:4px 9px;font-size:0.8rem;" onclick="exitBattleToMap()">🗺️ 決鬥之門</button>
+        <button class="hud-btn" style="padding:4px 9px;font-size:0.8rem;" onclick="exitBattleToMap()">🗺️ 大廳</button>
         <div class="dl-turn-badge">
-          <span id="bRoundText">TURN 1/4</span>
+          <span id="bRoundText">第 1/4 題</span>
           <span id="bStarText" style="color:#fde047;">★★★</span>
         </div>
       </div>
       <div class="dl-top-tools">
         <button class="hud-btn gold" id="btnBattlePotion" onclick="usePotion()">💡 錦囊 (3)</button>
-        <button class="hud-btn btn-font-toggle" onclick="cycleFontSize()" aria-label="切換字級">🔍 字</button>
+        <button class="hud-btn btn-font-toggle" data-short="1" onclick="cycleFontSize()" aria-label="切換字級">🔍 字</button>
       </div>
     </div>
 
-    <!-- 上方區：對手《遊戲王》怪獸卡 + LP 4000 + 出招挑戰 -->
+    <!-- 上方區：違規怪獸卡 + 剩幾題 + 出題對話 -->
     <div class="dl-opponent-zone">
       <div class="dl-opp-card" id="bossPortraitBox">
         <div class="dl-oc-head">
           <span class="dl-oc-title" id="ygoBossCardName">違規怪獸</span>
-          <span class="dl-oc-attr">闇</span>
         </div>
         <div class="dl-oc-stars" id="ygoBossStars">★★★★★★★★</div>
         <div class="dl-oc-art">
           <img id="bossPortraitImg" src="./assets_art/boss_counter.webp" alt="對手怪獸" />
         </div>
-        <div class="dl-oc-atk" id="ygoBossCardStats">ATK 2400 / DEF 1800</div>
+        <div class="dl-oc-atk" id="ygoBossCardStats">違規怪獸</div>
       </div>
 
       <div class="dl-opp-info">
         <div class="dl-lp-card">
           <div class="dl-lp-head">
             <span id="bBossLabel" style="font-weight:900;color:#fecdd3;font-size:0.86rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">👹 對手</span>
-            <span class="ygo-lp-num boss" id="bBossLpNum">LP 4000</span>
+            <span class="ygo-lp-num boss" id="bBossLpNum">剩 4 題</span>
           </div>
           <div class="dual-hp-track" style="height:8px;margin-top:4px;">
             <div class="dual-hp-ghost" id="bBossGhost" style="width:100%"></div>
@@ -4765,13 +4797,13 @@
         </div>
 
         <div class="dl-dialogue-box">
-          <div class="dlg-speaker" id="dlgSpeaker">👹 對手召喚違規怪獸！</div>
+          <div class="dlg-speaker" id="dlgSpeaker">👹 違規怪獸出招！</div>
           <div class="dlg-text" id="dlgText">...</div>
         </div>
       </div>
     </div>
 
-    <!-- 中央區：對決相位條 + 我方 LP 4000（擊破後即現過關繼續按鈕） -->
+    <!-- 中央區：我方體力（答對後出現「下一題」按鈕） -->
     <div class="dl-clash-bar">
       <div class="dl-clash-left">
         <img class="dl-hero-mini" id="heroPortraitBox" src="./assets_art/char_hero.webp" alt="專職決鬥王" />
@@ -4779,7 +4811,7 @@
           <div class="dl-lp-card hero">
             <div class="dl-lp-head">
               <span id="bHeroLabel" style="font-weight:900;color:#e0f2fe;font-size:0.82rem;white-space:nowrap;">⚡ Lv.1 決鬥王</span>
-              <span class="ygo-lp-num" id="bHeroLpNum" style="font-size:1.25rem;">LP 4000</span>
+              <span class="ygo-lp-num" id="bHeroLpNum" style="font-size:1.25rem;">❤️ 100%</span>
             </div>
             <div class="dual-hp-track" style="height:7px;margin-top:3px;">
               <div class="dual-hp-ghost" id="bHeroGhost" style="width:100%"></div>
@@ -4788,7 +4820,7 @@
           </div>
           <div class="dl-field-info" style="margin-top:4px;">
             <span>🌐 場地：<strong id="ygoFieldSpell">服務櫃台</strong></span>
-            <span class="ygo-phase-pill" id="ygoPhaseBadge">⚡ 請選擇下方一張閃卡發動反擊！</span>
+            <span class="ygo-phase-pill" id="ygoPhaseBadge">👇 點一張你認為對的法規牌</span>
           </div>
         </div>
       </div>
@@ -4802,7 +4834,7 @@
     <img id="battleRelicPreview" src="./assets_art/relic_seal_3d.webp" class="hidden" alt="" />
     <span id="bossPortraitName" class="hidden"></span>
 
-    <!-- 下方區：3 張超大高質感《遊戲王》手牌 -->
+    <!-- 下方區：3 張法規手牌 -->
     <div class="dl-hand-wrap" id="spellHand"></div>
   </div>
 </section>
@@ -4824,7 +4856,7 @@
       </div>
       <div class="duty-tools">
         <button class="hud-btn gold" id="btnDutyManual" onclick="openDutyManual()">📘 專職手冊</button>
-        <button class="hud-btn" onclick="switchDutyToTheatre()" title="切換為劇院四連戰模式（適合大螢幕講解）">⚡ 遊戲王決鬥盤</button>
+        <button class="hud-btn" onclick="switchDutyToTheatre()" title="切換為劇院四連戰模式（適合大螢幕講解）">⚡ 卡牌決鬥盤</button>
         <button class="hud-btn btn-font-toggle" onclick="cycleFontSize()" aria-label="切換字級">🔍 字：標準</button>
         <button class="hud-btn" id="btnDutyExit" onclick="exitDutyToMap(false)">🗺️ 回地圖</button>
       </div>
@@ -4851,17 +4883,17 @@
   <div class="cutin-band" id="cutinBand">
     <img class="cutin-portrait" id="cutinPortrait" src="./assets_art/char_hero.webp" alt="勇者特寫" />
     <div class="cutin-text-group">
-      <div class="cutin-kicker" id="cutinKicker">⚡ 你中了我的陷阱卡！CHAIN LINK 2 ⚡</div>
+      <div class="cutin-kicker" id="cutinKicker">✨ 法規奧義發動 ✨</div>
       <div class="cutin-title" id="cutinSpellTitle">反擊陷阱發動・法規鐵壁粉碎！</div>
     </div>
   </div>
 </div>
 
-<!-- 📺 電視《遊戲王》全套 3 階段劇場級技能大招 -->
+<!-- 📺 全螢幕 3 階段大招劇場（每關最後一擊） -->
 <div id="ygoUltTheater" role="dialog" aria-label="決鬥必殺技劇場">
   <canvas id="ygoUltCanvas"></canvas>
   <div class="ygo-ult-pillar"></div>
-  <button class="ygo-ult-skip" id="ygoUltSkipBtn" onclick="skipUltTheater(event)">⚡ 跳過大招 ▶</button>
+  <button class="ygo-ult-skip" id="ygoUltSkipBtn" onclick="skipUltTheater(event)">跳過 ▶</button>
 
   <!-- 階段 ①：決鬥者熱血眼神斜切分鏡 + 3D 巨型翻轉卡片 -->
   <div class="ygo-ult-eye-cutin" id="ygoUltEyeCutin">
@@ -4869,7 +4901,7 @@
       <img src="./assets_art/char_hero.webp" alt="決鬥王特寫" />
     </div>
     <div class="ygo-ult-eye-copy">
-      <div class="ygo-ult-eye-kicker" id="ygoUltEyeKicker">⚡ 翻開覆蓋的王牌！CHAIN LINK 2 ⚡</div>
+      <div class="ygo-ult-eye-kicker" id="ygoUltEyeKicker">⚡ 最後一擊 ⚡</div>
       <div class="ygo-ult-eye-line" id="ygoUltEyeLine">法規必殺技發動！</div>
     </div>
   </div>
@@ -4882,25 +4914,25 @@
           <span id="ygoUcfName">反擊王牌</span>
           <span class="ygo-ucf-orb" id="ygoUcfOrb">陷</span>
         </div>
-        <div class="ygo-ucf-bar" id="ygoUcfBar">SPELL SPEED 3</div>
+        <div class="ygo-ucf-bar" id="ygoUcfBar">📜 法源</div>
         <div class="ygo-ucf-art" id="ygoUcfArt">⚡</div>
         <div class="ygo-ucf-box" id="ygoUcfDesc">...</div>
       </div>
     </div>
   </div>
 
-  <!-- 階段 ②：電視動漫金屬書法招式大字 -->
+  <!-- 階段 ②：金屬書法大字＝這一關的重點 -->
   <div class="ygo-ult-calligraphy" id="ygoUltCalligraphy">
-    <div class="ygo-ult-sub-en" id="ygoUltSubEn">SIGNATURE FINISH MOVE</div>
-    <div class="ygo-ult-move-name" id="ygoUltMoveName">神聖法規・反射鏡力結界</div>
-    <div class="ygo-ult-card-call" id="ygoUltCardCall">⚡ 法規絕殺砲！</div>
+    <div class="ygo-ult-sub-en" id="ygoUltSubEn">🔑 本關重點</div>
+    <div class="ygo-ult-move-name" id="ygoUltMoveName">法規重點</div>
+    <div class="ygo-ult-card-call" id="ygoUltCardCall">「法規牌」</div>
   </div>
 
-  <!-- 階段 ③：對手怪獸卡龜裂粉碎 + 經典電子 LP 高速跳錶框 -->
+  <!-- 階段 ③：對手怪獸卡龜裂粉碎 + 擊敗字樣 -->
   <div class="ygo-ult-target-wrap" id="ygoUltTargetWrap">
     <div class="ygo-ult-lp-counter">
-      <div class="ygo-ult-lp-lbl" id="ygoUltLpLabel">OPPONENT LIFE POINTS</div>
-      <div class="ygo-ult-lp-digits" id="ygoUltLpDigits">LP 4000</div>
+      <div class="ygo-ult-lp-lbl" id="ygoUltLpLabel">魔王還剩</div>
+      <div class="ygo-ult-lp-digits" id="ygoUltLpDigits">1 題</div>
     </div>
     <div class="ygo-ult-target-card" id="ygoUltTargetCard">
       <div class="ygo-ult-target-name" id="ygoUltTargetName">違規怪獸</div>
@@ -5297,7 +5329,7 @@ function playSfx(kind) {
       playNote('square', 980 - i * 48, 910 - i * 48, now + i * 0.038, 0.034, 0.07);
     }
   } else if (kind === 'ygo_lp_drop') {
-    // 經典電視《遊戲王》高速電子跳錶聲：滴滴滴滴滴滴滴——咚！
+    // 高速電子跳錶聲：滴滴滴滴滴滴滴——咚！
     for (let i = 0; i < 18; i++) {
       const freq = 960 + ((i % 3) * 140);
       playNote('square', freq, freq - 60, now + i * 0.033, 0.028, 0.075);
@@ -5354,7 +5386,7 @@ function stepMusic() {
       ol.start(now); ol.stop(now + 0.34);
     }
   } else if (synthTrack === 'battle') {
-    // 《遊戲王》D小調高速交響搖滾決鬥旋律備援
+    // D小調高速交響搖滾決鬥旋律備援
     const seq = [293.66, 349.23, 440.00, 523.25, 587.33, 440.00, 523.25, 392.00];
     const f = seq[musicStep % seq.length];
     const o = ctx.createOscillator(), g = ctx.createGain();
@@ -5663,7 +5695,8 @@ function applyFontLevel(lv, persist) {
   if (FONT_LEVELS[fontLevel].cls) root.classList.add(FONT_LEVELS[fontLevel].cls);
   const label = `🔍 字：${FONT_LEVELS[fontLevel].label}`;
   document.querySelectorAll('.btn-font-toggle').forEach(b => {
-    b.textContent = label;
+    // 戰鬥畫面頂列空間小：只顯示「🔍 字」，免得擠出螢幕右邊
+    b.textContent = b.dataset.short ? '🔍 字' : label;
     b.setAttribute('aria-label', `切換字級（目前：${FONT_LEVELS[fontLevel].label}）`);
   });
   if (persist) {
@@ -5833,10 +5866,10 @@ const NODES = [
         monsterStars: 7, monsterAtk: 2400, monsterDef: 1800,
         enemyShort: "張理事無擔保借80萬逾股金，放委會審過能直接撥款嗎？",
         enemyAttack: "放款委員會已經審過了！張理事股金三十萬，要借無擔保八十萬，專職明天直接撥款，不用再送理事會了吧？",
-        correctCard: { name: "⤾ 理事會三分之二反擊陣", law: "章程範例 §27", desc: "放委審核後，須理事會「2/3出席同意」始得貸放！" },
+        correctCard: { name: "🏛️ 理事會三分之二反擊陣", law: "章程範例 §27", desc: "放委審核後，再經理事會2/3出席同意才能撥款。" },
         wrongCards: [
-          { name: "📝 放委蓋章速攻卡", law: "漏掉理事會同意程序", desc: "放委審過即可撥款，下次理事會再補報備查。", why: "超過股金的幹部無擔保借款，一定要先經理事會三分之二出席理事同意，不能先撥後補。" },
-          { name: "🤝 理事長單簽召喚卡", law: "決議機關不合規定", desc: "請理事長一人簽字核准，即可代表先行撥款。", why: "章程要求的是理事會全體討論並經三分之二出席理事同意，不是理事長一人決行。" }
+          { name: "📝 放委審定先撥後補報陣", law: "漏掉理事會同意程序", desc: "放委會審查通過就可以先撥款，下次理事會再補報備查。", why: "超過股金的幹部無擔保借款，一定要先經理事會三分之二出席理事同意，不能先撥後補。" },
+          { name: "🤝 理事長單獨核准決行令", law: "決議機關不合規定", desc: "理事長一人簽字核准，就能代表理事會先行撥款。", why: "章程要求的是理事會全體討論並經三分之二出席理事同意，不是理事長一人決行。" }
         ],
         key: "幹部無擔保借款超過股金 → 放款委員會審核＋理事會 2/3 出席理事同意才能貸放",
         keyLine: "幹部借款超過股金，要放款委員會審核，再經理事會三分之二出席理事同意才能撥款！",
@@ -5849,10 +5882,10 @@ const NODES = [
         monsterStars: 7, monsterAtk: 2450, monsterDef: 1900,
         enemyShort: "可以幫老社員代管存摺印章，或讓借款人自找放委簽名？",
         enemyAttack: "老社員說把存摺印章放你抽屜比較安全！還有借款人直接拿申請書去找放款委員簽字批准，不用經過專職啦！",
-        correctCard: { name: "🛡️ 司庫內控三鐵鎖", law: "幹部手冊・司庫工作要點", desc: "禁代管存摺印鑑！專職轉放委審、現金次日存銀行。" },
+        correctCard: { name: "🔐 司庫內控三鐵鎖", law: "幹部手冊・司庫工作要點", desc: "不代管存摺印鑑，申請書轉放委，現金次日存銀行。" },
         wrongCards: [
-          { name: "🗝️ 便民代管萬用卡", law: "觸犯代管存摺紅線", desc: "幫長者代管存摺印章，現金放滿一週再存銀行。", why: "幹部手冊嚴禁替社員保管股金憑證；現金票據最遲次一營業日上午存入銀行，存摺與印鑑須分開保管。" },
-          { name: "🏃 委員直簽便道卡", law: "違反審件程序", desc: "讓社員自己找放委簽申請書，借據免給影本。", why: "申請書必須由專職轉交放委會，嚴禁社員直找委員；且社須製發蓋與正本相同之借據影本交借款人及連保人。" }
+          { name: "🗝️ 長者存摺保管陣", law: "觸犯代管存摺紅線", desc: "替長者保管存摺和印章，現金累積滿一週再存入銀行。", why: "幹部手冊嚴禁替社員保管股金憑證；現金票據最遲次一營業日上午存入銀行，存摺與印鑑須分開保管。" },
+          { name: "🏃 委員直接審件令", law: "違反審件程序", desc: "社員可自己找放委簽申請書，借據不必另給影本。", why: "申請書必須由專職轉交放委會，嚴禁社員直找委員；且社須製發蓋與正本相同之借據影本交借款人及連保人。" }
         ],
         key: "禁代管存摺・申請書由專職轉放委會・借據影本蓋與正本相同・次營業日上午存現金",
         heroShout: "發動「司庫內控三鐵鎖」！絕不代管社員存摺印鑑、申請書由專職轉放委會、次一營業日上午存入銀行，才能真正保護自己清白！",
@@ -5864,10 +5897,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2550, monsterDef: 2000,
         enemyShort: "幹部能幫一般朋友作保嗎？借據只蓋章不用親簽嗎？",
         enemyAttack: "一般社員朋友來借錢，我們理監事職員好心都能當他連帶保證人吧？還清借據蓋章留社裡就好，借款人不用親筆簽名！",
-        correctCard: { name: "⚖️ 親簽與116作保結界", law: "幹部手冊／章程範例 §31 (116修)", desc: "借據須親簽＋蓋章；幹部僅限為親屬及法人社員作保！" },
+        correctCard: { name: "⚖️ 親簽與116作保結界", law: "幹部手冊／章程範例 §31 (116修)", desc: "借據要親簽加蓋章；幹部只能為親屬及法人社員作保。" },
         wrongCards: [
-          { name: "✍️ 蓋章免簽友愛卡", law: "漏掉親簽且擴張作保", desc: "借據只蓋章免親簽，幹部也可替同村社員作保。", why: "借據必須親自簽名及蓋章；且理監事職員除配偶、三親等內親屬及法人社員外，不得為其他社員作保。" },
-          { name: "🚫 法人全禁保守卡", law: "忽略116新修章放寬條款", desc: "116修章後，幹部連「法人社員」的作保也禁止。", why: "116修正章程第31條已放寬理監事及職員得擔任「法人社員」之借款連帶保證人！" }
+          { name: "✍️ 蓋章為憑同村作保令", law: "漏掉親簽且擴張作保", desc: "借據只要蓋章不必親簽，幹部也可以替同村的社員作保。", why: "借據必須親自簽名及蓋章；且理監事職員除配偶、三親等內親屬及法人社員外，不得為其他社員作保。" },
+          { name: "🚫 116幹部全面禁保結界", law: "忽略116新修章放寬條款", desc: "116修章後，幹部連「法人社員」的作保也禁止。", why: "116修正章程第31條已放寬理監事及職員得擔任「法人社員」之借款連帶保證人！" }
         ],
         key: "借據親簽＋蓋章・還清蓋已償還歸還・幹部作保僅限配偶、三親等內與法人社員",
         heroShout: "發動「親簽與116作保結界」！借據親簽加蓋章、還清蓋「本借款已償還」歸還；第31條僅准為配偶、三親等內及法人社員作保！",
@@ -5879,12 +5912,13 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2650, monsterDef: 2100,
         enemyShort: "每月財報何時編都行，拖到月底再陳報就夠了吧？",
         enemyAttack: "報表慢慢做就好，每月想什麼時候編完都行，月底前陳報就夠了吧？",
-        correctCard: { name: "⚡ 五日編表二十日陳報砲", law: "幹部手冊・司庫工作要點", desc: "每月終了5日內編完回傳，20日前陳報督導區會！" },
+        correctCard: { name: "📊 五日編表二十日陳報砲", law: "幹部手冊・司庫工作要點", desc: "每月終了5日內編完回傳，20日前陳報督導與區會。" },
         wrongCards: [
-          { name: "📅 十日月底拖延陣", law: "兩項期限都已逾期", desc: "每月終了10日內編完報表，月底再寄督導與區會。", why: "正確期限是每月終了 5 日內編表回傳、20 日前陳報，月底早就逾期了。" },
-          { name: "📆 五日月底半套卡", law: "陳報日超過 20 日", desc: "每月終了5日內編完報表，但月底30日前陳報協會。", why: "每月陳報協會督導及區會的期限是「20 日前」，不是月底。" }
+          { name: "📅 十日編表月底前陳報砲", law: "兩項期限都已逾期", desc: "每月終了10日內編完回傳，月底前陳報督導與區會。", why: "正確期限是每月終了 5 日內編表回傳、20 日前陳報，月底早就逾期了。" },
+          { name: "📆 五日編表三十日陳報令", law: "陳報日超過 20 日", desc: "每月終了5日內編完回傳，月底30日前陳報協會。", why: "每月陳報協會督導及區會的期限是「20 日前」，不是月底。" }
         ],
         key: "每月終了 5 日內編報表並回傳・20 日前陳報協會（督導）與區會",
+        bigLine: "5日編表・20日陳報",
         keyLine: "每月終了五天內編完報表，二十日前陳報督導和區會！",
         heroShout: "五日編表、二十日陳報砲擊碎拖延！每月終了5日內完成報表與電子回傳，20日前準時陳報督導與區會，報表簽章須齊全！",
         bossDefeat: "五日、二十日……我服了！這本【幹部手冊內控寶典】請收下！"
@@ -5907,10 +5941,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2600, monsterDef: 2000,
         enemyShort: "跨年能先關帳發股息嗎？研習便當可直接扣教育金嗎？",
         enemyAttack: "跨年夜啦！理事長說，趕快把年結關帳、先把股息發掉，大會之後再補決議！今年研習便當和冬令救濟，直接記教育金、公益金就好！",
-        correctCard: { name: "⤾ 大會後發息與費用分流陣", law: "幹部手冊 P.159／網路版實務", desc: "股息須等「大會通過後」發；日常支出入費用科目！" },
+        correctCard: { name: "🗓️ 大會後發息與費用分流陣", law: "幹部手冊 P.159／網路版實務", desc: "股息等社員大會通過後才發，日常支出入費用科目。" },
         wrongCards: [
-          { name: "⏩ 先發後補速結令", law: "違反盈餘分配決議程序", desc: "年底先鎖帳並發股息，等社員大會再補鼓掌追認。", why: "股息及利攤須待社員大會審議通過後方得確實發放，不可提前鎖帳先發。" },
-          { name: "🧾 直扣基金便利帳", law: "違反會計科目分流原則", desc: "日常教育與公益支出，直接借記扣除教育公益金。", why: "日常教育、公益開支應列「5712教育開支」「5631捐贈與補助支出」等費用科目，不直接借記基金。" }
+          { name: "⏩ 年底先發息大會再追認陣", law: "違反盈餘分配決議程序", desc: "年底先關帳並發放股息，社員大會時再提請追認。", why: "股息及利攤須待社員大會審議通過後方得確實發放，不可提前鎖帳先發。" },
+          { name: "🧾 教育公益支出直扣基金法", law: "違反會計科目分流原則", desc: "日常的教育與公益支出，直接借記扣除教育金與公益金。", why: "日常教育、公益開支應列「5712教育開支」「5631捐贈與補助支出」等費用科目，不直接借記基金。" }
         ],
         key: "股息利攤須於大會通過後發放（勿提前鎖年結）；教育公益支出入費用科目",
         keyLine: "股息和利息攤還，要等社員大會通過之後才能發放！",
@@ -5923,10 +5957,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2700, monsterDef: 2100,
         enemyShort: "盈餘先提公積再補虧損？股息全免申報、5月繳協會費？",
         enemyAttack: "年底盈餘當然先提公積金、最後剩多少再彌補虧損！而且儲互社所有社員股息都免稅，1月底資料沒傳沒關係，5月再繳協會費就好！",
-        correctCard: { name: "🧮 五步分配與時限黃金律", law: "儲互社法 §15、§13-1／幹部手冊", desc: "虧損利攤公積公益教育股息！1月底報、3月底會費" },
+        correctCard: { name: "🧮 五步分配與時限黃金律", law: "儲互社法 §15、§13-1／幹部手冊", desc: "虧損利攤公積公益教育股息；1月底報、3月底會費。" },
         wrongCards: [
-          { name: "💸 股息全面免稅誤導陣", law: "忽略百萬課稅門檻與申報日", desc: "股金不論多少股息全免申報，年終資料3月再上傳。", why: "股金「未達 100 萬」才免稅，達/逾 100 萬股息須於「1月底前」辦理所得申報與上傳年終資料。" },
-          { name: "⏳ 先提公積五月繳費單", law: "分配順序與繳費日全錯", desc: "先提公積金20%再補虧損，協會費等5月再匯繳。", why: "須「先彌補累積虧損」才能利攤與提公積金；協會費須於「每年 3 月底前」依上年底社員數匯繳。" }
+          { name: "💸 股息全免與三月上傳律", law: "忽略百萬課稅門檻與申報日", desc: "股金不論多少，股息全部免申報，年終資料3月再上傳。", why: "股金「未達 100 萬」才免稅，達/逾 100 萬股息須於「1月底前」辦理所得申報與上傳年終資料。" },
+          { name: "⏳ 公積先提與五月繳費律", law: "分配順序與繳費日全錯", desc: "先提公積金20%再補虧損，協會費等5月再匯繳。", why: "須「先彌補累積虧損」才能利攤與提公積金；協會費須於「每年 3 月底前」依上年底社員數匯繳。" }
         ],
         key: "虧損➔利攤➔公積➔公益教育➔股息；1月底上傳與申報(百萬股金門檻)；3月底協會費",
         heroShout: "發動「五步分配與時限黃金律」！依儲互社法 §15 嚴守五步順序，1月底前上傳年終資料及申報所得，3月底前依社員數（含法人）每人100元匯繳協會費！",
@@ -5938,10 +5972,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2750, monsterDef: 2200,
         enemyShort: "備抵呆帳不用先扣股金？沒提足照發股息？免點借據？",
         enemyAttack: "計算備抵呆帳不用先扣社員股金吧？準備沒提足也沒關係，今年股息率照樣發到最高！監事總檢查只看損益表，不用點借據！",
-        correctCard: { name: "🛡️ 四三二倒扣與總檢查聖盾", law: "呆帳辦法 §7／章程 §54／幹部手冊", desc: "四三二類倒扣股金；未提足限股息；每年清點借據！" },
+        correctCard: { name: "📋 四三二倒扣與總檢查聖盾", law: "呆帳辦法 §7／章程 §54／幹部手冊", desc: "四三二類倒扣股金；未提足限股息；每年清點借據。" },
         wrongCards: [
-          { name: "📊 二三四順扣放水術", law: "扣減股金順序顛倒", desc: "二三四類順著扣股金，讓備抵呆帳提越少越好。", why: "依呆帳處理辦法 §7，須依「第四類➔第三類➔第二類」反向順序優先扣除股金，才符合審慎提列！" },
-          { name: "👀 免點借據輕鬆查帳法", law: "監事會總檢查項目漏失", desc: "總檢查只看損益表即可，借據不必每年定期清點。", why: "年終總檢查一定要核對決算報告各表、股息發放簽收表圓股數與利攤金額，並「每年定期清點借據及申請書一次」。" }
+          { name: "📊 二三四順扣與股金計算盾", law: "扣減股金順序顛倒", desc: "依第二、三、四類的順序先扣股金，再計算備抵呆帳。", why: "依呆帳處理辦法 §7，須依「第四類➔第三類➔第二類」反向順序優先扣除股金，才符合審慎提列！" },
+          { name: "👀 損益表總檢查免點借據盾", law: "監事會總檢查項目漏失", desc: "總檢查只看損益表即可，借據不必每年定期清點。", why: "年終總檢查一定要核對決算報告各表、股息發放簽收表圓股數與利攤金額，並「每年定期清點借據及申請書一次」。" }
         ],
         key: "備抵呆帳四三二反向扣股金・未提足股息不逾全國平均1/2・每年定期清點借據",
         heroShout: "「四三二倒扣與總檢查聖盾」發動！高風險四、三、二類倒著先扣股金，提撥未足前限制股息率，並配合監事會每年清點全數借據！",
@@ -5953,12 +5987,13 @@ const NODES = [
         monsterStars: 9, monsterAtk: 2800, monsterDef: 2250,
         enemyShort: "公積金提10%就好，公益和教育金平分各2.5%嗎？",
         enemyAttack: "公積金隨便提一點就好，公益金和教育金平分成各兩個半，哪來那麼多規定！",
-        correctCard: { name: "💎 二十趴公積與二三黃金律", law: "儲互社法 §15／章程範例 §56", desc: "公積金20%以上；公益金2%、教育金3%不平分！" },
+        correctCard: { name: "💰 二十趴公積與二三黃金律", law: "儲互社法 §15／章程範例 §56", desc: "公積金20%以上；公益金2%、教育金3%。" },
         wrongCards: [
-          { name: "📉 十趴平分精簡提案卡", law: "公積與二三比例均錯", desc: "公積金提撥10%，公益金與教育金平分各2.5%。", why: "公積金應至少 20%；公益金與教育金章程範例明定為「公益金 2%、教育金 3%」，並非各 2.5%。" },
-          { name: "📊 二十趴與三三超標卡", law: "公益金比例錯誤", desc: "公積金提撥20%以上，公益金與教育金各提3%。", why: "公益金及教育金兩者法定合計為 5%（公益 2%＋教育 3%）。" }
+          { name: "🧮 十趴公積與平分黃金律", law: "公積與二三比例均錯", desc: "公積金提撥10%，公益金與教育金平分各2.5%。", why: "公積金應至少 20%；公益金與教育金章程範例明定為「公益金 2%、教育金 3%」，並非各 2.5%。" },
+          { name: "📊 二十趴公積與三三黃金律", law: "公益金比例錯誤", desc: "公積金提撥20%以上，公益金與教育金各提3%。", why: "公益金及教育金兩者法定合計為 5%（公益 2%＋教育 3%）。" }
         ],
         key: "公積金 20% 以上・公益金 2% ＋ 教育金 3%（合計 5%）",
+        bigLine: "公積20%・公益2%・教育3%",
         keyLine: "公積金至少提二成，公益金百分之二、教育金百分之三！",
         heroShout: "算盤一撥、精準合規！公積金至少 20%、公益金 2%、教育金 3%，一分一毫都不容打折！",
         bossDefeat: "算盤一撥，全都對！翡翠金算盤歸你了，年終決算大師！"
@@ -5981,10 +6016,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2700, monsterDef: 2200,
         enemyShort: "臨時動議能現場附議就表決修章或賣社辦不動產嗎？",
         enemyAttack: "大會開到臨時動議啦！社員舉手說，現場表決修改章程、順便把社裡的不動產賣掉！只要有人附議就能表決吧？",
-        correctCard: { name: "⤾ 四大禁止臨時動議封條", law: "116召開社員大會通知函／章程 §37", desc: "選罷、不動產、修章、解散合併須提前通知禁臨時動議" },
+        correctCard: { name: "📜 四大禁止臨時動議封條", law: "116召開社員大會通知函／章程 §37", desc: "選罷、不動產、修章、解散合併，都不得臨時動議。" },
         wrongCards: [
-          { name: "🙋 附議強行表決咒", law: "重大議案不得臨時動議", desc: "主席同意且兩人附議，修章或賣不動產皆可臨時表決。", why: "這四類事項法律明文禁止以臨時動議提出，有人附議也不得表決。" },
-          { name: "🏠 只禁選舉例外卡", law: "漏掉修章與不動產等三項", desc: "僅選罷理監事禁臨時動議，修章與不動產可現場提。", why: "不動產購置興建處分、變更章程、解散合併與選罷理監事同列禁臨時動議範圍。" }
+          { name: "🙋 主席同意附議即表決令", law: "重大議案不得臨時動議", desc: "主席同意且兩人附議，修章或賣不動產皆可臨時表決。", why: "這四類事項法律明文禁止以臨時動議提出，有人附議也不得表決。" },
+          { name: "🏠 僅選罷禁臨時動議封條", law: "漏掉修章與不動產等三項", desc: "僅選罷理監事禁臨時動議，修章與不動產可現場提。", why: "不動產購置興建處分、變更章程、解散合併與選罷理監事同列禁臨時動議範圍。" }
         ],
         key: "選罷理監事・不動產・變更章程・解散合併 → 絕不得以臨時動議提出",
         keyLine: "選舉罷免、不動產、修章、解散合併，都不能用臨時動議提出！",
@@ -5997,10 +6032,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2800, monsterDef: 2250,
         enemyShort: "網路版套3碼科目、人數不一致、借名不動產免報告？",
         enemyAttack: "116手冊送印囉！網路版社直接套視窗版3碼科目(131/272)、清查人數和比較表差8人、借名不動產只口頭約定不用報告大會對吧？",
-        correctCard: { name: "🔍 116手冊八大勾稽魔導輪", law: "1-1 116手冊範本(1151027修)／幹部手冊", desc: "網路4碼不混用、人數損益勾稽、借名立約並報告！" },
+        correctCard: { name: "🔍 116手冊八大勾稽魔導輪", law: "1-1 116手冊範本(1151027修)／幹部手冊", desc: "網路4碼不混用、人數損益勾稽、借名立約並報告。" },
         wrongCards: [
-          { name: "📘 科目通用混編手冊", law: "網路版與視窗版混用會出錯", desc: "網路版與視窗版科目可混套，人數差一點明年再調。", why: "網路版(4碼)與視窗版(3碼)不可混用；清查人數、業務報告與歷年比較表總人數必須前後勾稽完全一致。" },
-          { name: "🤐 借名登記保密條約", law: "漏立契約且未向大會報告", desc: "借名登記不動產口頭講好即可，免立約也免報大會。", why: "依幹部手冊規定，借名登記不動產須立「不動產借名登記契約書」，並於社員大會提出報告及列冊移交。" }
+          { name: "📘 116手冊兩版通用科目輪", law: "網路版與視窗版混用會出錯", desc: "網路版與視窗版科目可混套，人數差一點明年再調。", why: "網路版(4碼)與視窗版(3碼)不可混用；清查人數、業務報告與歷年比較表總人數必須前後勾稽完全一致。" },
+          { name: "🤐 借名登記口頭約定免報典", law: "漏立契約且未向大會報告", desc: "借名登記不動產口頭講好即可，免立約也免報大會。", why: "依幹部手冊規定，借名登記不動產須立「不動產借名登記契約書」，並於社員大會提出報告及列冊移交。" }
         ],
         key: "網路4碼 vs 視窗3碼不混用・人數/損益/基金結餘前後勾稽・借名登記立約並大會報告",
         heroShout: "召喚「116手冊八大勾稽魔導輪」！清查人數、損益淨利、公益教育金決算餘額前後全數勾稽，網路版用4碼不混用，借名登記立契約並大會報告！",
@@ -6012,10 +6047,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2850, monsterDef: 2300,
         enemyShort: "欠費不能抵股金？116年監事會依然免設監事秘書？",
         enemyAttack: "116章程修對照表不重要啦！欠費不能抵充股金、每股低於百元照原價退、而且監事會依然只選常務監事不用設「監事秘書」吧？",
-        correctCard: { name: "📜 116新章程六條真言典", law: "1-4 章程修正對照表(116-1151027修)", desc: "116修章6條：§17欠費抵股金、§48設監事秘書"},
+        correctCard: { name: "📜 116新章程六條真言典", law: "1-4 章程修正對照表(116-1151027修)", desc: "116修章：§17欠費抵股金、§48設監事秘書。"},
         wrongCards: [
-          { name: "📚 舊章程沿用簡便卷", law: "漏列監事秘書與欠費抵充", desc: "欠費不得抵充股金，監事會依舊免設監事秘書。", why: "116修正 §17 已增列「欠費」經理事會通過得以股金抵充；§48 已明訂監事會置「常務監事、秘書各一人」。" },
-          { name: "🪪 僅認身分證狹隘令", law: "忽略未成年與外籍證件修訂", desc: "修正§8僅憑身分證入社，未滿14與居留證不受理。", why: "116修正 §8 明確規範：未滿14歲可憑戶口名簿/謄本，非本國國民可檢具居留證辦理入社。" }
+          { name: "📚 現行章程延續守則真言典", law: "漏列監事秘書與欠費抵充", desc: "欠費不得抵充股金，監事會依舊免設監事秘書。", why: "116修正 §17 已增列「欠費」經理事會通過得以股金抵充；§48 已明訂監事會置「常務監事、秘書各一人」。" },
+          { name: "🪪 116入社證件從嚴新制典", law: "忽略未成年與外籍證件修訂", desc: "修正§8僅憑身分證入社，未滿14與居留證不受理。", why: "116修正 §8 明確規範：未滿14歲可憑戶口名簿/謄本，非本國國民可檢具居留證辦理入社。" }
         ],
         key: "116修章6條：§8證件・§17欠費抵股金・§20低於百元退股・§31法人保人・§48監事秘書・§50對帳單",
         heroShout: "「116新章程六條真言典」解放！提案四完整納入六條修正對照表，§48監事秘書與 §17欠費抵充、§20低於百元退股通通無遺漏！",
@@ -6027,12 +6062,13 @@ const NODES = [
         monsterStars: 9, monsterAtk: 2900, monsterDef: 2350,
         enemyShort: "對帳單隨便抽幾個寄就好，三年內也不用全部核對？",
         enemyAttack: "對帳單隨便抽幾個社員寄寄看就好，三年內也不用全部核對吧？",
-        correctCard: { name: "📬 三十％與三年全對結界", law: "章程範例 §50 第5款 (116 修正)", desc: "每年寄對帳單至少30%備查，3年內核對全部總帳！" },
+        correctCard: { name: "📬 三十％與三年全對結界", law: "章程範例 §50 第5款 (116 修正)", desc: "每年寄對帳單至少30%備查，3年內核對全部總帳。" },
         wrongCards: [
-          { name: "✉️ 十％與三年懶人包", law: "每年寄發比例不足 30%", desc: "每年寄對帳單達10%，3年內完成核對全部總帳。", why: "116修正第50條明確要求每年至少寄發「百分之三十」並製表備查。" },
-          { name: "📆 三十％與五年寬限卡", law: "全部核對年限超過 3 年", desc: "每年寄對帳單達30%，但放寬為5年內核對全總帳。", why: "全部社員個人總帳必須於「3 年內」完成核對一次，不是 5 年。" }
+          { name: "✉️ 百分之十與三年全對結界", law: "每年寄發比例不足 30%", desc: "每年寄對帳單達10%，3年內完成核對全部總帳。", why: "116修正第50條明確要求每年至少寄發「百分之三十」並製表備查。" },
+          { name: "📆 三十％與五年全對結界", law: "全部核對年限超過 3 年", desc: "每年寄對帳單達30%，但放寬為5年內核對全總帳。", why: "全部社員個人總帳必須於「3 年內」完成核對一次，不是 5 年。" }
         ],
         key: "對帳單每年至少 30% 並製表備查・3 年內核對全部社員個人總帳一次",
+        bigLine: "對帳單30%・3年全對",
         keyLine: "對帳單每年至少寄百分之三十，三年內全部社員的總帳都要核對一次！",
         heroShout: "116 第50條結界斬！每年寄發對帳單至少 30% 製表備查，3 年內完成全部社員個人總帳核對一次！",
         bossDefeat: "三十、三年……我認輸！這本【116新章程六條金典】請專職收下！"
@@ -6055,10 +6091,10 @@ const NODES = [
         monsterStars: 8, monsterAtk: 2800, monsterDef: 2300,
         enemyShort: "登記不足名額怎辦？審查小組只派理事3人審就好？",
         enemyAttack: "登記截止了！理事九席只有六個人登記，審查小組就由理事會派三個自己人審，監事會不必插手！",
-        correctCard: { name: "⤾ 理二監一與理事提名令", law: "選罷辦法 §8、§9", desc: "不足由理事會提名補足；審查小組「理2＋監1」！" },
+        correctCard: { name: "👥 理二監一與理事提名令", law: "選罷辦法 §8、§9", desc: "不足由理事會提名補足；審查小組由理2監1組成。" },
         wrongCards: [
-          { name: "🏛️ 理事會全包審核陣", law: "審查小組成員不合法", desc: "理事會派3名自己人審查完畢，不必找監事會參加。", why: "依選罷辦法第9條，審查小組必須包含理事會指定 2 人及監事會指定監事 1 人。" },
-          { name: "👔 三長當然小組卡", law: "法規無當然成員規定", desc: "不足名額現場舉手推薦，由三長當然組成審查小組。", why: "不足名額應由理事會決議提名補足，且審查小組採指定制而非三長當然制。" }
+          { name: "🏛️ 理事三人審查小組自決令", law: "審查小組成員不合法", desc: "由理事會派理事3人審查，監事會不必派人參加。", why: "依選罷辦法第9條，審查小組必須包含理事會指定 2 人及監事會指定監事 1 人。" },
+          { name: "👔 三長當然審查小組令", law: "法規無當然成員規定", desc: "不足名額現場舉手推薦，由三長當然組成審查小組。", why: "不足名額應由理事會決議提名補足，且審查小組採指定制而非三長當然制。" }
         ],
         key: "登記不足由理事會提名補足・審查小組＝理事會 2 人＋監事會指定監事 1 人",
         keyLine: "登記不足由理事會提名補足；審查小組是理事會兩人加監事一人！",
@@ -6071,10 +6107,10 @@ const NODES = [
         monsterStars: 9, monsterAtk: 2900, monsterDef: 2400,
         enemyShort: "僅2人連署、同時推理監事、74歲法人代表能合格？",
         enemyAttack: "這份推薦書只找 2 人連署、同社員還同時勾理事與監事，這位 74 歲法人代表也一起直接讓他登記合格吧？",
-        correctCard: { name: "🔮 候選連署3人照妖鏡", law: "116候選登記書／116連署推薦書", desc: "滿2年23~72歲(法人同)；連署3人以上且擇一！" },
+        correctCard: { name: "🔎 候選連署3人照妖鏡", law: "116候選登記書／116連署推薦書", desc: "滿2年23~72歲(法人同)；連署3人以上且擇一。" },
         wrongCards: [
-          { name: "🤝 多頭跨職連署放水單", law: "違反一人一推與擇一限制", desc: "同一社員可同時推理監事，且只要2人連署即合格。", why: "連署推薦書明確載明：連署人至少 3 人以上、每一社員連署以 1 人為限，不得同時推薦理事及監事。" },
-          { name: "🏢 法人代表免限特權卡", law: "法人代表須具同等資格", desc: "法人社員代表人滿20歲即可，不受72足歲限制。", why: "法人社員代表人須具備與一般自然人候選人同等之積極與消極資格（23～72足歲等）。" }
+          { name: "🤝 連署二人雙推照妖鏡", law: "違反一人一推與擇一限制", desc: "同一社員可以同時推薦理事和監事，只要2人連署就合格。", why: "連署推薦書明確載明：連署人至少 3 人以上、每一社員連署以 1 人為限，不得同時推薦理事及監事。" },
+          { name: "🏢 法人代表二十歲照妖鏡", law: "法人代表須具同等資格", desc: "法人社員代表人滿20歲即可，不受72足歲限制。", why: "法人社員代表人須具備與一般自然人候選人同等之積極與消極資格（23～72足歲等）。" }
         ],
         key: "入社滿2年・23～72足歲・法人代表同標準・連署至少3人每人限推1人且理監事擇一",
         heroShout: "「候選連署3人照妖鏡」照射！74歲法人代表與一人重複/雙職連署立即現形，全部退件不予受理！",
@@ -6086,10 +6122,10 @@ const NODES = [
         monsterStars: 9, monsterAtk: 2950, monsterDef: 2450,
         enemyShort: "配偶與職員妻能分任理監事？算到年底、連任五次？",
         enemyAttack: "我們夫妻或兄弟同時分任理事跟監事，職員的太太也可以當理事吧？反正年齡年資都算到今年年底 12/31，理事長也能連任五次！",
-        correctCard: { name: "⚔️ 二親等迴避與投票前一日劍", law: "選罷辦法 §4、§6-1／章程 §40／監督 §14", desc: "二親等及職員親屬迴避！理事長連任1次算投票前1日" },
+        correctCard: { name: "👨‍👩‍👧 二親等迴避與投票前一日劍", law: "選罷辦法 §4、§6-1／章程 §40／監督 §14", desc: "二親等與職員親屬迴避，連任限1次，算至投票前1日。" },
         wrongCards: [
-          { name: "👨‍👩‍👧‍👦 跨年底連任通融牌", law: "起迄日與連任上限均錯", desc: "夫妻分任理事與監事不違法，年資算到當年12/31。", why: "配偶及二親等血親不得「同時或分任」理監事；年齡年資算至「投票日前一日」，且理事長連任以一次為限。" },
-          { name: "🌐 他社兼職專員免避卡", law: "漏掉職員親屬與跨社禁兼任", desc: "專職職員配偶可以選理事，理事長能力好連任三次。", why: "選罷辦法 §6-1 禁止職員及其配偶與二親等血親擔任理監事；監督辦法 §14 禁止跨社兼任理監事。" }
+          { name: "👫 夫妻分任與年資算至年底劍", law: "起迄日與連任上限均錯", desc: "夫妻分任理事與監事不違法，年資算到當年12/31。", why: "配偶及二親等血親不得「同時或分任」理監事；年齡年資算至「投票日前一日」，且理事長連任以一次為限。" },
+          { name: "🌐 職員眷屬參選與連任三次劍", law: "漏掉職員親屬與跨社禁兼任", desc: "專職職員的配偶可以選理事，理事長可連任三次。", why: "選罷辦法 §6-1 禁止職員及其配偶與二親等血親擔任理監事；監督辦法 §14 禁止跨社兼任理監事。" }
         ],
         key: "二親等與職員親屬迴避・理事長連任限一次・禁跨社兼任・算至投票日前一日",
         heroShout: "「二親等迴避與投票前一日劍」一刀斬斷裙帶！保護社務獨立公正，年齡年資精準算至投票日前一日！",
@@ -6101,12 +6137,13 @@ const NODES = [
         monsterStars: 9, monsterAtk: 3000, monsterDef: 2500,
         enemyShort: "登記期限隨便訂，資格不合格何時申請複審都行嗎？",
         enemyAttack: "登記期限慢慢來，審查小組愛審多久就審多久，被刷掉的人想什麼時候申請複審都行！",
-        correctCard: { name: "⚡ 十五日登記三日複審令", law: "選罷辦法 §8、§10", desc: "公告15日內登記7日審，不合格3日內申請複審！" },
+        correctCard: { name: "⏱️ 十五日登記三日複審令", law: "選罷辦法 §8、§10", desc: "公告15日內登記、7日審完，不合格3日內申請複審。" },
         wrongCards: [
-          { name: "⏳ 七日登記七日複審陣", law: "登記與複審天數全錯", desc: "公告後給7日登記，不合格者接到通知7日內複審。", why: "登記期間為「15 日內」，複審申請期限為「3 日內」（限一次）。" },
-          { name: "🕰️ 十五日登記七日複審陣", law: "申請複審期限超過 3 日", desc: "公告15日內登記，但接到通知後有7日可申請複審。", why: "複審申請與審結期限皆為「3 日」，7 日是初審截止後的審查天數。" }
+          { name: "⏳ 七日登記七日複審令", law: "登記與複審天數全錯", desc: "公告後給7日登記，不合格者接到通知7日內複審。", why: "登記期間為「15 日內」，複審申請期限為「3 日內」（限一次）。" },
+          { name: "🕰️ 十五日登記七日複審令", law: "申請複審期限超過 3 日", desc: "公告15日內登記，接到不合格通知7日內申請複審。", why: "複審申請與審結期限皆為「3 日」，7 日是初審截止後的審查天數。" }
         ],
         key: "公告15日內登記・截止7日內審完・通知3日內申請複審(限1次)・3日內審結",
+        bigLine: "15日登記・3日複審",
         keyLine: "公告後十五天內登記，審查七天，不合格的三天內可申請複審！",
         heroShout: "「十五日登記三日複審令」精準對時！15日登記、7日審查、3日申請複審＋3日審結，抽籤排號流程滴水不漏！",
         bossDefeat: "好吧好吧，我們家族投降！收下這面【候選資格照妖鏡】！"
@@ -6129,10 +6166,10 @@ const NODES = [
         monsterStars: 9, monsterAtk: 2900, monsterDef: 2400,
         enemyShort: "拿兩張委託書，能算兩人出席再領三套選票幫忙投？",
         enemyAttack: "我有帶太太和鄰居的兩張委託書！算兩個委託出席，再發我三套理事監事選票，我替他們一起投！",
-        correctCard: { name: "⤾ 委託書四鐵律絕殺盾", law: "116出席委託書／選罷辦法 §5", desc: "委託僅算出席，禁代領代投！且一人限受1人委託！" },
+        correctCard: { name: "📄 委託書四鐵律絕殺盾", law: "116出席委託書／選罷辦法 §5", desc: "委託只算出席，不可代領代投；一人限受1人委託。" },
         wrongCards: [
-          { name: "🗳️ 持書代領代投許可卡", law: "誤認委託書可代行選舉權", desc: "有親簽委託書就能代領選票，替對方圈選投入票匭。", why: "出席委託書與選罷辦法 §5 明確規定：受託人絕對不得代理領票、行使選舉權或罷免權！" },
-          { name: "👥 雙重家族代出席令", law: "違反一人限受一人委託", desc: "雖不能代領選票，但一人可同時受兩人委託計出席。", why: "每一受託人「僅得受一人委託」，拿兩張委託書當場就要退掉超額那一張！" }
+          { name: "🗳️ 親簽委託代投許可盾", law: "誤認委託書可代行選舉權", desc: "有親簽委託書就能代領選票，替對方圈選投入票匭。", why: "出席委託書與選罷辦法 §5 明確規定：受託人絕對不得代理領票、行使選舉權或罷免權！" },
+          { name: "👪 一人受雙委託出席盾", law: "違反一人限受一人委託", desc: "雖不能代領選票，但一人可同時受兩人委託計出席。", why: "每一受託人「僅得受一人委託」，拿兩張委託書當場就要退掉超額那一張！" }
         ],
         key: "委託書只算出席人數・禁代領選票與投票・受託人限本社社員・一人限受一人委託",
         keyLine: "委託書只能算出席，不能代領選票、不能代投，而且一個人只能受一位委託！",
@@ -6145,10 +6182,10 @@ const NODES = [
         monsterStars: 9, monsterAtk: 2950, monsterDef: 2450,
         enemyShort: "鉛筆或漏監事印有效？同名註記或只改一格整張廢？",
         enemyAttack: "這批選票有用鉛筆畫○的、還有漏蓋監事印的統統算有效！至於寫（住東勢）區分同名、或是只塗改一格的其他兩格要全部作廢對吧？",
-        correctCard: { name: "🔍 雙印無記名廢票鑑定眼", law: "116空白選舉票／選罷辦法 §12、§20", desc: "須社印＋監事印！鉛筆廢；同名註記、未改格有效！" },
+        correctCard: { name: "🔍 雙印無記名廢票鑑定眼", law: "116空白選舉票／選罷辦法 §12、§20", desc: "須社印＋監事印；鉛筆廢；同名註記、未改格仍有效。" },
         wrongCards: [
-          { name: "✏️ 鉛筆寫字寬容認定卡", law: "鉛筆與漏印均屬整張無效", desc: "鉛筆或漏監事印有效，只要塗改一格就整張票作廢。", why: "漏蓋雙印之一或用鉛筆圈寫皆「全張無效」；反之塗改屬部分性質，只該塗改處無效、其餘圈選仍有效。" },
-          { name: "📛 同名註記一律判廢令", law: "誤殺法定的有效例外票", desc: "名字旁註記(住東勢)一律算夾寫文字，整張作廢。", why: "選罷辦法 §20 但書明文：同姓名為區別而註記者不算夾寫文字，整張仍屬有效票！" }
+          { name: "✏️ 鉛筆與單印有效鑑定眼", law: "鉛筆與漏印均屬整張無效", desc: "用鉛筆或漏蓋監事印仍有效，只要塗改一格就整張作廢。", why: "漏蓋雙印之一或用鉛筆圈寫皆「全張無效」；反之塗改屬部分性質，只該塗改處無效、其餘圈選仍有效。" },
+          { name: "📛 同名註記整張判廢鑑定眼", law: "誤殺法定的有效例外票", desc: "名字旁註記(住東勢)一律算夾寫文字，整張作廢。", why: "選罷辦法 §20 但書明文：同姓名為區別而註記者不算夾寫文字，整張仍屬有效票！" }
         ],
         key: "社印＋監事印俱全生效・鉛筆／超額／夾字整張廢・同名註記與部分塗改仍有效",
         heroShout: "「雙印無記名廢票鑑定眼」掃描完畢！雙印俱全不鉛筆、分明有效與無效，開票零爭議！",
@@ -6160,10 +6197,10 @@ const NODES = [
         monsterStars: 9, monsterAtk: 3000, monsterDef: 2500,
         enemyShort: "發票免停簽？同人圈兩次廢票？超額開票直接頒獎？",
         enemyAttack: "出席有全體 1/6 就好、發票不必停止簽到！如果開出票比發出票多一樣直接頒獎，同一人圈兩次整張都給我作廢！",
-        correctCard: { name: "📦 封匭報核與一票認定劍", law: "章程 §35／選罷辦法 §14、§21、§28", desc: "1/5成會停簽！圈兩次算1票；超票加封票匭報核！" },
+        correctCard: { name: "📦 封匭報核與一票認定劍", law: "章程 §35／選罷辦法 §14、§21、§28", desc: "1/5成會停簽；圈兩次算1票；超票加封票匭報核。" },
         wrongCards: [
-          { name: "🔄 圈兩次作廢重開票令", law: "誤判圈兩次效力且漏封票匭", desc: "同人圈兩次整張廢；開出多於發出重數一次免上報。", why: "同一被選舉人圈兩次以「一票」計；開出多於發出疑舞弊須由主席會同監票員加封票匭報主管機關並副知協會。" },
-          { name: "✍️ 邊開票邊補簽放行法", law: "違反發票前停簽與成會人數", desc: "滿50人可開會，投票進行中遲到社員仍可補簽領票。", why: "成會門檻須全體 1/5 或成年 100 人以上，且發票前主席必須宣布「停止簽到」。" }
+          { name: "🔄 雙圈作廢與重點票數劍", law: "誤判圈兩次效力且漏封票匭", desc: "同人圈兩次整張廢；開出多於發出重數一次免上報。", why: "同一被選舉人圈兩次以「一票」計；開出多於發出疑舞弊須由主席會同監票員加封票匭報主管機關並副知協會。" },
+          { name: "✍️ 五十人成會與補簽放行劍", law: "違反發票前停簽與成會人數", desc: "滿50人可開會，投票進行中遲到社員仍可補簽領票。", why: "成會門檻須全體 1/5 或成年 100 人以上，且發票前主席必須宣布「停止簽到」。" }
         ],
         key: "成會全體1/5或成年100人・發票前停簽・同人圈兩次算1票・超票加封票匭報主管機關",
         heroShout: "「封匭報核與一票認定劍」發動！成會、停簽、同人圈兩次算一票、超額舞弊立即加封票匭報核！",
@@ -6175,12 +6212,13 @@ const NODES = [
         monsterStars: 10, monsterAtk: 3050, monsterDef: 2550,
         enemyShort: "通知前兩天寄就好？改限制連記過半同意就能改嗎？",
         enemyAttack: "開會通知隨便提前一兩天寄就好！現場想改限制連記，過半數同意就可以改，每張能圈多少都行！",
-        correctCard: { name: "⚡ 七日通知與三分之一封條", law: "儲互社法 §17／章程 §37／選罷 §2", desc: "大會7日前書面通知；改限制連記須出席1/3同意！" },
+        correctCard: { name: "📨 七日通知與三分之一封條", law: "儲互社法 §17／章程 §37／選罷 §2", desc: "大會7日前書面通知；改限制連記須出席1/3同意。" },
         wrongCards: [
-          { name: "📆 十五日通知二分之一令", law: "通知天數與連記門檻皆錯", desc: "大會須15日前通知，改限制連記須出席1/2同意。", why: "開會通知依儲互社法 §17 為「7 日前」；改限制連記法門檻為「出席 1/3 以上同意」。" },
-          { name: "📨 七日通知二分之一門檻卡", law: "限制連記門檻寫錯", desc: "7日前書面通知，但改限制連記須出席1/2過半同意。", why: "改無記名限制連記法之法定同意門檻為「出席人數三分之一以上」。" }
+          { name: "📆 十五日通知與二分之一封條", law: "通知天數與連記門檻皆錯", desc: "大會須15日前通知，改限制連記須出席1/2同意。", why: "開會通知依儲互社法 §17 為「7 日前」；改限制連記法門檻為「出席 1/3 以上同意」。" },
+          { name: "📮 七日通知與二分之一封條", law: "限制連記門檻寫錯", desc: "7日前書面通知，但改限制連記須出席1/2過半同意。", why: "改無記名限制連記法之法定同意門檻為「出席人數三分之一以上」。" }
         ],
         key: "7 日前書面通知・改無記名限制連記須出席 1/3 以上同意（圈選不超過應選名額 1/2）",
+        bigLine: "7日前通知・改連記要1/3",
         keyLine: "開會前七天要書面通知；改限制連記要出席三分之一以上同意！",
         heroShout: "「七日通知與三分之一封條」一擊必殺！7日前書面通知，限制連記 1/3 以上同意、上限半數以內！",
         bossDefeat: "好啦好啦！我乖乖領自己那一張票！【雙印無記名聖盾】送你！"
@@ -6204,10 +6242,10 @@ const NODES = [
         monsterStars: 10, monsterAtk: 3100, monsterDef: 2600,
         enemyShort: "首次監事會免選監事秘書？圖記清冊下月再交就好？",
         enemyAttack: "新理事長選出來了又怎樣？監事會選一個常務監事就好，不用選什麼監事秘書！圖記和清冊，我下個月有空再交！",
-        correctCard: { name: "⤾ 116監秘與當場移交聖令", law: "116第1次會議紀錄／章程 §48、§70", desc: "首監必選常監＋監事秘書；新理事長當場移交圖記！" },
+        correctCard: { name: "🏛️ 116監秘與當場移交聖令", law: "116第1次會議紀錄／章程 §48、§70", desc: "首次監事會選常監＋監事秘書；新理事長當場移交圖記。" },
         wrongCards: [
-          { name: "📅 下月吉日交接令", law: "違反當場移交規定", desc: "選出新理事長後先代管圖記，下個月再擇吉日交接。", why: "章程 §70 明定新理事長選出後「當場」以清冊連同圖記移交，15 日內是接收完畢期限。" },
-          { name: "🧑‍⚖️ 沿舊例免監事秘書卡", law: "漏掉116新制監事秘書", desc: "當場移交圖記，但首次監事會沿舊制免選監事秘書。", why: "116修正章程第48條與會議紀錄格式已規定監事會置「常務監事、監事秘書各一人」！" }
+          { name: "📅 116監秘與下月交接聖令", law: "違反當場移交規定", desc: "選出新理事長後由舊任先代管圖記，下個月再擇吉日交接。", why: "章程 §70 明定新理事長選出後「當場」以清冊連同圖記移交，15 日內是接收完畢期限。" },
+          { name: "🧑‍⚖️ 當場移交免設監秘聖令", law: "漏掉116新制監事秘書", desc: "當場移交圖記，但首次監事會沿舊制免選監事秘書。", why: "116修正章程第48條與會議紀錄格式已規定監事會置「常務監事、監事秘書各一人」！" }
         ],
         key: "第1次監事會必選常務監事＋監事秘書・新理事長選出當場移交清冊與圖記",
         keyLine: "第一次監事會要選常務監事和監事秘書，新理事長一選出就要當場移交！",
@@ -6220,10 +6258,10 @@ const NODES = [
         monsterStars: 10, monsterAtk: 3150, monsterDef: 2650,
         enemyShort: "清冊印二份找卸任常監簽？短缺免帳號紀錄免寄嗎？",
         enemyAttack: "移交清冊我隨便印一式二份找「卸任常監」簽一簽就好！短缺借據不用寫帳號、催收呆帳不列、首次理事會不用逐案決議、紀錄存社免寄督導吧？",
-        correctCard: { name: "📦 六冊一式四份天羅地網陣", law: "116移交清冊／116第1次紀錄／章程 §70", desc: "6冊一式四份新常監監交！短缺載帳號紀錄寄督導" },
+        correctCard: { name: "📦 六冊一式四份天羅地網陣", law: "116移交清冊／116第1次紀錄／章程 §70", desc: "6冊一式四份新常監監交；短缺載帳號，紀錄寄督導。" },
         wrongCards: [
-          { name: "📄 二份卸任簽收簡冊", law: "份數與監交人全錯", desc: "清冊印一式二份卸任常監簽，呆帳免列紀錄存社。", why: "須造「一式四份」，由「新任常務監事」監交；催收/委外/呆帳/侵占須列未完成案件清冊，紀錄須寄督導及區會各一份。" },
-          { name: "⏭️ 首次理事會免開會決議法", law: "漏列印鑑保管人等12項議案", desc: "首次理事會只訂開會日，資金與印鑑保管明年再議。", why: "依 116 第一次理事會議紀錄格式，須逐案決議資金存放、零用金、三印鑑保管人等 12 項關鍵提案！" }
+          { name: "📄 清冊二份卸任常監簽收陣", law: "份數與監交人全錯", desc: "清冊印一式二份卸任常監簽，呆帳免列紀錄存社。", why: "須造「一式四份」，由「新任常務監事」監交；催收/委外/呆帳/侵占須列未完成案件清冊，紀錄須寄督導及區會各一份。" },
+          { name: "⏭️ 首次理事會只訂開會日陣", law: "漏列印鑑保管人等12項議案", desc: "首次理事會只訂下次開會日，資金與印鑑保管明年再議。", why: "依 116 第一次理事會議紀錄格式，須逐案決議資金存放、零用金、三印鑑保管人等 12 項關鍵提案！" }
         ],
         key: "6大冊一式四份・新常監監交・短缺借據載帳號借號・首次理事會12案＆寄督導區會",
         heroShout: "「六冊一式四份天羅地網陣」壓境！每一份短缺借據載明帳號借號、催收侵占列入清冊、紀錄寄督導與區會，一點漏洞都不留！",
@@ -6235,10 +6273,10 @@ const NODES = [
         monsterStars: 10, monsterAtk: 3200, monsterDef: 2700,
         enemyShort: "免15日報協會？專職逾期免罰？抵押只設100%？",
         enemyAttack: "報備不用急著 15 日內報協會啦！專職自己借款逾期超過 3 個月口頭勸勸就好；單一社員借超過 10% 或抵押權照原額 100% 設定也無妨吧？",
-        correctCard: { name: "👑 報備放款合規終極結界", law: "監督 §12／章程 §29／社法 §11／擔保 §11", desc: "15日報、職員逾3月免職、單人10%、抵押+20%" },
+        correctCard: { name: "📮 報備放款合規終極結界", law: "監督 §12／章程 §29／社法 §11／擔保 §11", desc: "15日內報協會、職員逾3月免職、抵押加20%。" },
         wrongCards: [
-          { name: "💬 職員逾期口頭勸導特赦卡", law: "違反 §29 強制免職紅線", desc: "專職借款逾期超3個月僅口頭勸導，不必免職處分。", why: "章程 §29 明訂：職員借款逾期超過 3 個月「應即免職」，理事、監事則「即喪失資格」。" },
-          { name: "🏦 原額100%抵押便利放款術", law: "抵押設定成數不足加20%", desc: "會後1個月報協會，最高限額抵押按放款100%設。", why: "大會紀錄須於會後「15 日內」陳報協會；最高限額抵押權最低應以實際放款金額「加 20%（即120%）」設定！" }
+          { name: "💬 職員逾期勸導合規結界", law: "違反 §29 強制免職紅線", desc: "專職借款逾期超3個月僅口頭勸導，不必免職處分。", why: "章程 §29 明訂：職員借款逾期超過 3 個月「應即免職」，理事、監事則「即喪失資格」。" },
+          { name: "🏦 一月陳報原額抵押結界", law: "抵押設定成數不足加20%", desc: "會後1個月報協會，最高限額抵押按放款100%設。", why: "大會紀錄須於會後「15 日內」陳報協會；最高限額抵押權最低應以實際放款金額「加 20%（即120%）」設定！" }
         ],
         key: "大會後15日內陳報・職員逾期超3月免職・單一社員10%上限・最高限額抵押加20%",
         heroShout: "「報備放款合規終極結界」轟殺！會後15日陳報、揭曉30日簡歷、1月內變更登記，守住 10% 上限與抵押加 20% 底線！",
@@ -6250,12 +6288,13 @@ const NODES = [
         monsterStars: 12, monsterAtk: 3500, monsterDef: 3000,
         enemyShort: "大圖記和帳冊我就是不交！頂多被念幾句還有刑責？",
         enemyAttack: "大圖記和帳冊我就是不交！頂多被念幾句，能拿我怎樣？",
-        correctCard: { name: "⚡ 十五日接收六十萬天譴砲", law: "章程範例 §70／儲蓄互助社法 §32", desc: "15日接收完畢；抗不移交處1年徒刑或60萬罰金！" },
+        correctCard: { name: "⚖️ 十五日接收六十萬天譴砲", law: "章程範例 §70／儲蓄互助社法 §32", desc: "15日接收完畢；抗不移交處1年徒刑或60萬罰金。" },
         wrongCards: [
-          { name: "🏛️ 三十日接收三十萬口諭令", law: "接收期限與罰金上限皆錯", desc: "新理事長於30日內接收，拒絕移交僅處30萬罰鍰。", why: "章程 §70 為「15 日內」接收完畢；儲互社法 §32 刑責罰金為「60 萬元以下」且有徒刑。" },
-          { name: "💸 僅科行政勸導無刑責牌", law: "誤認拒絕移交無刑事罰則", desc: "移交屬社內家務事，就算拒絕交出圖記也無刑責。", why: "儲互社法第32條明文規範刑責：處 1 年以下有期徒刑、拘役，或科或併科 60 萬元以下罰金！" }
+          { name: "🏛️ 三十日接收三十萬天譴砲", law: "接收期限與罰金上限皆錯", desc: "新理事長於30日內接收，拒絕移交僅處30萬罰鍰。", why: "章程 §70 為「15 日內」接收完畢；儲互社法 §32 刑責罰金為「60 萬元以下」且有徒刑。" },
+          { name: "🗂️ 社內自治勸導移交處理令", law: "誤認拒絕移交無刑事罰則", desc: "移交屬社內家務事，就算拒絕交出圖記也無刑責。", why: "儲互社法第32條明文規範刑責：處 1 年以下有期徒刑、拘役，或科或併科 60 萬元以下罰金！" }
         ],
         key: "15 日內新理事長會同新常務監事接收完畢・拒絕移交處 1 年以下徒刑或 60 萬以下罰金",
+        bigLine: "15日接收・抗不移交有刑責",
         keyLine: "十五天內接收完畢；拒絕移交，可處一年以下徒刑或六十萬元以下罰金！",
         heroShout: "終極連鎖反擊「十五日接收六十萬天譴砲」全開！依儲互社法第32條與章程第70條，15日內會同新常監完整點交，拒絕移交依法嚴辦！",
         bossDefeat: "天啊！一年徒刑、罰金六十萬？！我投降！千年社大圖記與六冊移交清冊，馬上完整點交！"
@@ -6422,9 +6461,9 @@ function enterWorldMapNow(useSave) {
   document.getElementById('titleScreen').classList.add('hidden');
   document.getElementById('mapScreen').classList.remove('hidden');
   const cmBtn = document.getElementById('btnCombatMode');
-  if (cmBtn) cmBtn.textContent = combatMode === 'duty' ? '📋 模式：櫃台值班審件' : '⚡ 模式：遊戲王決鬥盤';
+  if (cmBtn) cmBtn.textContent = combatMode === 'duty' ? '📋 模式：櫃台值班審件' : '⚡ 模式：卡牌決鬥盤';
   renderMapUI();
-  showMapToast("🗺️ 點擊發光的角色據點或 3D 寶箱，展開奇幻選務冒險！");
+  showMapToast("🗺️ 挑一道決鬥之門開始！想在最終關多個幫手，可先點「📦 移交清冊」。");
   autoStartMusic();
 }
 
@@ -6747,6 +6786,8 @@ function renderMapUI() {
   if (relCntEl) relCntEl.textContent = `聖物 ${player.relics.length}/6`;
   const cbBtn = document.getElementById('btnCardBook');
   if (cbBtn) cbBtn.textContent = `🃏 卡冊 ${(player.cards || []).length}/${CARD_TOTAL}`;
+  const lhBtn = document.getElementById('btnLedgerHub');
+  if (lhBtn) lhBtn.textContent = `📦 移交清冊 ${player.openedChests.length}/${LEDGER_CHESTS.length}`;
 
   const nextNode = NODES.find(n => !player.clearedNodes.includes(n.id));
   const hintEl = document.getElementById('questHintBar');
@@ -6764,17 +6805,16 @@ function renderMapUI() {
       const isNext = nextNode && nextNode.id === nd.id;
       const isLocked = isNodeLocked(nd);
       const st = bestStars(nd.id);
-      const maxAtk = (nd.rounds[nd.rounds.length - 1] && nd.rounds[nd.rounds.length - 1].monsterAtk) || (2400 + idx * 150);
-      const cta = isCleared ? `✅ ${starText(st)} 再戰` : (isLocked ? `🔒 再過 ${lockLeft} 關` : '⚔️ DUEL！');
+      const cta = isCleared ? `✅ ${starText(st)} 再戰` : (isLocked ? `🔒 再過 ${lockLeft} 關` : '⚔️ 開始挑戰');
       return `
         <button class="dl-gate-card ${isCleared ? 'is-cleared' : ''} ${isNext ? 'is-next' : ''} ${isLocked ? 'locked' : ''}" onclick="travelToNode('${nd.id}')">
           <div class="dl-gc-top">
             <div class="dl-gc-art">
               <img src="${nd.img}" alt="${nd.name}" />
-              <div class="dl-gc-atk">ATK ${maxAtk}</div>
+              <div class="dl-gc-atk">${nd.rounds.length} 題</div>
             </div>
             <div class="dl-gc-meta">
-              <span class="dl-gc-stage">STAGE ${idx + 1}${nd.isFinal ? '・最終決戰' : ''}</span>
+              <span class="dl-gc-stage">第 ${idx + 1} 關${nd.isFinal ? '・最終決戰' : ''}</span>
               <div class="dl-gc-zone">${nd.zone}</div>
               <div class="dl-gc-boss">${isLocked ? '🔒 前五關過關後解鎖' : `👹 ${nd.name}`}</div>
             </div>
@@ -6862,6 +6902,40 @@ function openLedgerCard(chestId) {
   if (!stored) speakLine(ledgerOpenLine(ch), 'mentor');
 }
 
+/* 大廳「📦 移交清冊（選修）」：六冊列表，點一冊進入點交核對卡 */
+function openLedgerHub() {
+  stopLedgerTimer();
+  ledgerUI.pausedLeft = null;
+  ledgerUI.id = null;
+  ledgerUI.phase = 'check';
+  stopVoice();
+  playSfx('click');
+  const got = player.openedChests.length, all = LEDGER_CHESTS.length;
+  document.getElementById('ledgerModalTitle').textContent = `📦 移交清冊（選修）${got}/${all}`;
+  const reward = got >= all
+    ? '🌟 六冊全齊！最終關開場破盾、每題先刪一張錯牌，過關證書加蓋「完美清冊」印記。'
+    : (got >= 3
+      ? `📒 已解鎖最終關「清冊佐證」：每題先刪一張錯牌。再 ${all - got} 冊全齊，證書加蓋「完美清冊」印記。`
+      : `📒 再點交 ${3 - got} 冊，最終關每題會先幫你刪一張錯牌。`);
+  document.getElementById('ledgerModalBody').innerHTML = `
+    <p class="lh-lead">每冊先逐項打勾核對，再 ${LEDGER_QUIZ_SECONDS} 秒快問快答，答對就入庫；答錯不扣分，可以重來。</p>
+    <p class="lh-reward">${reward}</p>
+    <div class="lh-list">
+      ${LEDGER_CHESTS.map(c => {
+        const ok = player.openedChests.includes(c.id);
+        return `
+        <button class="lh-item ${ok ? 'got' : ''}" onclick="openLedgerCard('${c.id}')">
+          <span class="lh-title">${ok ? '✅' : '📦'} ${c.title}</span>
+          <span class="lh-cta">${ok ? '再看一次' : '開始點交 ▶'}</span>
+        </button>`;
+      }).join('')}
+    </div>
+    <div class="lc-actions"><button class="hud-btn" onclick="closeModal('ledgerModal')">🏠 回大廳</button></div>`;
+  document.getElementById('ledgerModal').classList.add('open');
+  const body = document.getElementById('ledgerModalBody');
+  if (body) body.scrollTop = 0;
+}
+
 /* 移交清冊寶箱念的話（預錄語音清單也用這兩個） */
 function ledgerOpenLine(ch) { return `${ch.title}。請逐項點交核對，全部打勾後進行二十秒快問快答。`; }
 function ledgerWinLine(ch) { return `點交無誤，獲得${ch.title}`; }
@@ -6928,7 +7002,7 @@ function renderLedgerCard() {
           <span class="lc-law">📜 ${q.law}</span>
           ${ledgerCnt >= allCnt
             ? '<div style="margin-top:8px;color:#9a6516;font-weight:900;">🌟 六大清冊全數點交！最終關過關時發動「六大清冊・合法點交大陣」，證書加蓋「完美清冊制霸印記」！</div>'
-            : `<div style="margin-top:8px;">📒 清冊進度 ${ledgerCnt}/${allCnt}：${ledgerCnt >= 3 ? '已解鎖最終關「清冊佐證」：魔王難題先刪一張錯牌、第一次判錯不扣公信力' : `再 ${3 - ledgerCnt} 冊，就能在最終關解鎖「清冊佐證」`}。</div>`}
+            : `<div style="margin-top:8px;">📒 清冊進度 ${ledgerCnt}/${allCnt}：${ledgerCnt >= 3 ? '已解鎖最終關「清冊佐證」：每題先刪一張錯牌' : `再 ${3 - ledgerCnt} 冊，就能在最終關解鎖「清冊佐證」`}。</div>`}
         </div>`;
     } else if (stored) {
       resultHtml = `
@@ -6959,11 +7033,13 @@ function renderLedgerCard() {
   if (phase === 'fail' || phase === 'timeout') {
     actions = `
       <button class="hud-btn gold" onclick="startLedgerQuiz()">🔁 重新點交（再 ${LEDGER_QUIZ_SECONDS} 秒）</button>
-      <button class="hud-btn" onclick="closeModal('ledgerModal')">🗺️ 稍後再來</button>`;
+      <button class="hud-btn" onclick="openLedgerHub()">📦 回清冊列表</button>`;
   } else if (phase === 'ok' || stored) {
-    actions = `<button class="hud-btn gold" onclick="closeModal('ledgerModal')">🎒 收入背包，返回地圖 ▶</button>`;
+    actions = `
+      <button class="hud-btn gold" onclick="openLedgerHub()">📦 回清冊列表 ▶</button>
+      <button class="hud-btn" onclick="closeModal('ledgerModal')">🏠 回大廳</button>`;
   } else {
-    actions = `<button class="hud-btn" onclick="closeModal('ledgerModal')">🗺️ 稍後再點交</button>`;
+    actions = `<button class="hud-btn" onclick="openLedgerHub()">📦 回清冊列表</button>`;
   }
 
   document.getElementById('ledgerModalBody').innerHTML = `
@@ -7072,8 +7148,11 @@ function openFinalLockModal() {
           <span class="final-lock-cta">⚔️ 去挑戰</span>
         </button>`).join('')}
     </div>
-    ${chests < allChests ? `<p class="final-lock-note">📦 也可以先到地圖上點交移交清冊（已點交 ${chests}/${allChests} 冊）：收齊 3 冊，最終關有「清冊佐證」幫忙。</p>` : ''}
-    <div class="final-lock-actions"><button class="hud-btn gold" onclick="closeModal('finalLockModal')">知道了</button></div>`;
+    ${chests < allChests ? `<p class="final-lock-note">📦 也可以先點交移交清冊（已點交 ${chests}/${allChests} 冊）：收齊 3 冊，最終關每題先刪一張錯牌。</p>` : ''}
+    <div class="final-lock-actions">
+      ${chests < allChests ? `<button class="hud-btn ledger-hub-btn" onclick="closeModal('finalLockModal'); openLedgerHub()">📦 去點交清冊</button>` : ''}
+      <button class="hud-btn gold" onclick="closeModal('finalLockModal')">知道了</button>
+    </div>`;
   document.getElementById('finalLockModal').classList.add('open');
 }
 
@@ -7169,7 +7248,7 @@ function triggerArcadeUltimate(spellName, isKnockout) {
           color: i % 3 === 0 ? '#fde047' : (i % 3 === 1 ? '#00e5ff' : '#d946ef')
         });
       }
-      spawnVfxBurst(tx / w, ty / h, '#fde047', isKnockout ? '👑 K.O.! 4000 OVERKILL!' : '💥 CRITICAL! -1000 LP');
+      spawnVfxBurst(tx / w, ty / h, '#fde047', isKnockout ? '👑 擊敗魔王！' : '💥 命中！');
     }, 180);
   }, 220);
 
@@ -7451,13 +7530,12 @@ function showBossLine(rd) {
 function showMentor(html) {
   const spk = document.getElementById('dlgSpeaker');
   spk.className = 'dlg-speaker mentor';
-  spk.textContent = '🧑‍🏫 選務督導導師・溫馨救援錦囊';
+  spk.textContent = '🧑‍🏫 督導提醒';
   document.getElementById('dlgText').innerHTML = html;
 }
 
 function startBattle(node) {
-  // 預設走「選務值班」玩法；若切換為「劇院對決」模式則走劇院四連戰
-  // 純粹《遊戲王 Duel Links》3張閃卡極簡單屏對決
+  // 目前只有這一種玩法：3 張閃卡三選一、單屏對決（「櫃台值班審件」程式還留著，但沒有入口、題庫也沒有文件題）
   fxAbort();
   battle.active = true;
   battle.node = node;
@@ -7500,14 +7578,14 @@ function renderLedgerBanner(node) {
   let html;
   if (n === 0) {
     cls += ' none';
-    html = `📦 移交清冊 0/${total}：抗不移交護盾全開！（仍可直接挑戰；先到大地圖點交清冊，可開場破盾＋排除錯牌）`;
+    html = `📦 移交清冊 0/${total}：仍可直接挑戰；先回大廳點「📦 移交清冊」點交 3 冊，每題會先刪一張錯牌`;
   } else if (n < 3) {
-    html = `📒 移交清冊 ${n}/${total}：開場破盾 −${n * 10}！（再點交 ${3 - n} 冊，可解鎖每回合「清冊佐證」助攻）`;
+    html = `📒 移交清冊 ${n}/${total}：開場先打掉魔王一點血！再點交 ${3 - n} 冊，每題會先刪一張錯牌`;
   } else if (n < total) {
-    html = `📒 移交清冊 ${n}/${total}：開場破盾 −${n * 10}＋每回合「清冊佐證」助攻（出牌刪一張錯牌、找碴先核對一項、快判擋一次失誤）！（收齊 ${total} 冊可發動合法點交大陣）`;
+    html = `📒 移交清冊 ${n}/${total}：「清冊佐證」發動，每題先刪一張錯牌！收齊 ${total} 冊證書加蓋完美印記`;
   } else {
     cls += ' perfect';
-    html = `🌟 六大清冊・合法點交大陣發動！開場破防 −${n * 10 + 30}＋每回合「清冊佐證」助攻（出牌刪一張錯牌、找碴先核對一項、快判擋一次失誤）！`;
+    html = `🌟 六大清冊全數點交：開場破盾，每題先刪一張錯牌！`;
   }
   el.className = cls;
   el.innerHTML = html;
@@ -7571,18 +7649,18 @@ function renderBattleRound() {
   const stEl = document.getElementById('ygoBossStars');
   if (stEl) stEl.textContent = '★'.repeat(Math.min(12, stars));
   const cs = document.getElementById('ygoBossCardStats');
-  if (cs) cs.textContent = `ATK ${atk} / DEF ${def}`;
+  if (cs) cs.textContent = '違規怪獸';
   const fs = document.getElementById('ygoFieldSpell');
   if (fs) fs.textContent = nd.zone;
   const pb = document.getElementById('ygoPhaseBadge');
-  if (pb) { pb.className = 'ygo-phase-pill'; pb.textContent = '⚡ 點擊下方閃卡直接發動反擊！'; }
+  if (pb) { pb.className = 'ygo-phase-pill'; pb.textContent = '👇 點一張你認為對的法規牌'; }
 
   const hl = document.getElementById('bHeroLabel');
   if (hl) hl.textContent = `⚡ Lv.${player.lv} 決鬥王`;
   const bl = document.getElementById('bBossLabel');
   if (bl) bl.textContent = `👹 ${nd.name}`;
   const rt = document.getElementById('bRoundText');
-  if (rt) rt.textContent = `TURN ${battle.roundIdx + 1}/${nd.rounds.length}`;
+  if (rt) rt.textContent = `第 ${battle.roundIdx + 1}/${nd.rounds.length} 題`;
   updateBattleHpBars();
   updateBattleStars();
 
@@ -7592,7 +7670,7 @@ function renderBattleRound() {
   const spk = document.getElementById('dlgSpeaker');
   if (spk) {
     spk.className = 'dlg-speaker';
-    spk.textContent = `👹 召喚【${mName}】`;
+    spk.textContent = `👹 ${mName}`;
   }
   const dlg = document.getElementById('dlgText');
   if (dlg) dlg.textContent = `「${rd.enemyShort || rd.enemyAttack}」`;
@@ -7605,7 +7683,7 @@ function renderBattleRound() {
   updatePotionButton();
 }
 
-/* 三選一出牌：三張牌蓋著發出、點擊即發動電視《遊戲王》3段式大招反擊 */
+/* 三選一出牌：三張牌發出、點擊出牌；答對前 3 題短特效、最後一擊播大招 */
 function renderCardRound(rd, t) {
   const deck = [
     { ...rd.correctCard, ok: true },
@@ -7624,19 +7702,18 @@ function renderCardRound(rd, t) {
     if (wrongIdx.length) battle.struckIdx = wrongIdx[Math.floor(Math.random() * wrongIdx.length)];
   }
 
+  // 三種牌框顏色只為了好看、依位置輪流使用（跟對錯無關）；角落標甲乙丙，方便講師問「選甲的舉手」
   const ygoFrames = [
-    { kind: 'trap', cls: 'ygo-trap', attr: '陷', bar: '⤾ 反擊陷阱卡・SPELL SPEED 3' },
-    { kind: 'spell', cls: 'ygo-spell', attr: '魔', bar: '⚡ 速攻魔法卡・QUICK-PLAY' },
-    { kind: 'monster', cls: 'ygo-monster', attr: '光', bar: '✪✪✪✪✪✪✪✪ 王牌怪獸・ATK 3000' }
+    { kind: 'trap', cls: 'ygo-trap', attr: '甲' },
+    { kind: 'spell', cls: 'ygo-spell', attr: '乙' },
+    { kind: 'monster', cls: 'ygo-monster', attr: '丙' }
   ];
-  const slotLabels = ['手牌甲・點擊反擊', '手牌乙・點擊反擊', '手牌丙・點擊反擊'];
   document.getElementById('spellHand').innerHTML = deck.map((c, idx) => {
     const struck = idx === battle.struckIdx;
     const p = splitCardName(c.name);
     const yf = ygoFrames[idx % ygoFrames.length];
     c._ygoKind = yf.kind;
     c._ygoAttr = yf.attr;
-    c._ygoBar = yf.bar;
     return `
     <button class="foil-card dl-ygo-card ${yf.cls} ${struck ? 'card-struck' : ''}" id="fcard_${idx}" onclick="castSpellCard(${idx})" ${struck ? 'disabled' : ''}>
       <div class="dl-card-head">
@@ -7647,48 +7724,31 @@ function renderCardRound(rd, t) {
         </span>
       </div>
       <div class="dl-card-subbar">
-        <span>${yf.bar}</span>
-        <span>🃏 ${slotLabels[idx % slotLabels.length]}</span>
+        <span>🃏 法規牌${yf.attr}</span>
+        <span>點一下出牌</span>
       </div>
       <div class="dl-card-desc">${c.desc}</div>
     </button>`;
   }).join('');
 }
 
-const lpDisplay = { hero: 4000, boss: 4000 };
-function animateLpValue(elId, key, targetLp) {
-  const el = document.getElementById(elId);
-  if (!el) return;
-  const start = lpDisplay[key];
-  const diff = targetLp - start;
-  if (diff === 0) { el.textContent = `LP ${targetLp}`; return; }
-  const t0 = Date.now();
-  const dur = 480;
-  function step() {
-    const p = Math.min(1, (Date.now() - t0) / dur);
-    const val = Math.round(start + diff * p);
-    lpDisplay[key] = val;
-    el.textContent = `LP ${val}`;
-    if (p < 1 && typeof requestAnimationFrame === 'function') requestAnimationFrame(step);
-    else { lpDisplay[key] = targetLp; el.textContent = `LP ${targetLp}`; }
-  }
-  step();
+/* 血條旁的字用白話：魔王顯示「還剩幾題」，自己顯示體力百分比（不再用 LP 數字） */
+function bossQuestionsLeft() {
+  return Math.max(0, Math.ceil(battle.bossHp / 100));
 }
-
 function updateBattleHpBars() {
   const hpPct = Math.round((player.hp / player.maxHp) * 100);
   const bPct = Math.round((battle.bossHp / battle.bossMaxHp) * 100);
-  const heroLp = Math.round((player.hp / player.maxHp) * 4000);
-  const bossLp = Math.round((battle.bossHp / battle.bossMaxHp) * 4000);
   document.getElementById('bHeroHpLabel').textContent = `${player.hp} / ${player.maxHp}`;
   document.getElementById('bHeroMain').style.width = `${hpPct}%`;
   document.getElementById('bHeroGhost').style.width = `${hpPct}%`;
-  animateLpValue('bHeroLpNum', 'hero', heroLp);
+  document.getElementById('bHeroLpNum').textContent = `❤️ ${hpPct}%`;
 
   document.getElementById('bBossHpLabel').textContent = `${battle.bossHp} / ${battle.bossMaxHp}`;
   document.getElementById('bBossMain').style.width = `${bPct}%`;
   document.getElementById('bBossGhost').style.width = `${bPct}%`;
-  animateLpValue('bBossLpNum', 'boss', bossLp);
+  const left = bossQuestionsLeft();
+  document.getElementById('bBossLpNum').textContent = left > 0 ? `剩 ${left} 題` : '擊敗！';
 }
 
 function castSpellCard(idx) {
@@ -7708,7 +7768,7 @@ function castSpellCard(idx) {
   });
 }
 
-/* 出對牌：翻開三張牌的法源、標上「收入卡冊」，再發動電視《遊戲王》大招劇場（completeRound） */
+/* 出對牌：翻開三張牌的法源、收入卡冊，再進 completeRound（短特效或最後一擊大招） */
 function resolveCorrectCard(idx) {
   const card = battle.cards[idx];
   const btn = document.getElementById(`fcard_${idx}`);
@@ -7725,9 +7785,9 @@ function resolveCorrectCard(idx) {
 }
 
 /* =========================================================
-   📺 電視《遊戲王》全套 3 階段劇場級技能大招引擎
-   ① 千年神器覺醒＋決鬥者熱血眼神斜切分鏡＋3D巨卡翻轉召喚光柱
-   ② 專屬書法大字＋Mirror Force鏡力雷射 / 黑魔導次元斬 / 噴射白光砲
+   📺 全螢幕 3 階段大招引擎（只在每關最後一擊播放）
+   ① 光柱＋決鬥者眼神斜切分鏡＋3D巨卡翻轉
+   ② 書法大字＝本關重點（rd.bigLine）＋彩虹雷射 / 交叉斬 / 光砲三種光效
    ③ 對手怪獸卡龜裂粉碎＋64片3D碎片飛散＋經典LP跳錶歸零音效
 ========================================================= */
 const ygoUlt = {
@@ -7820,7 +7880,7 @@ function runUltTheaterCanvas() {
       ctx.restore();
     }
 
-    // 階段 ② 終極能量光砲 / 鏡力折射雷射 / 黑魔導十字次元斬
+    // 階段 ② 光砲 / 彩虹雷射 / 交叉斬
     ygoUlt.lasers = ygoUlt.lasers.filter(l => l.life > 0);
     for (const l of ygoUlt.lasers) {
       const p = l.life / l.maxLife;
@@ -7889,35 +7949,32 @@ function playTvYugiohUltimate(cardObj, rd, nd, isKnockout, prevLp, nextLp) {
     lw: 1.5 + Math.random() * 3
   }));
 
-  const p = splitCardName((cardObj && cardObj.name) || '王牌反擊卡');
-  const moveThemes = {
-    trap: { sub: 'COUNTER TRAP • CHAIN LINK 2', move: '神聖法規・反射鏡力結界', kicker: '⚡ 翻開覆蓋的陷阱卡！COUNTER REVERSAL ⚡' },
-    spell: { sub: 'DARK ARCANA • DIMENSION SLASH', move: '黑・魔・導・跨年破邪次元斬', kicker: '✨ 速攻魔法發動！QUICK-PLAY CHAIN ✨' },
-    monster: { sub: 'BURST STREAM OF DESTRUCTION', move: '毀滅的噴射白光・千年天譴砲', kicker: '🔥 王牌怪獸終極一擊！SIGNATURE FINISHER 🔥' }
-  };
-  const mt = moveThemes[kind] || moveThemes.trap;
+  const p = splitCardName((cardObj && cardObj.name) || '法規牌');
+  // 三種光效（雷射／交叉斬／光砲）只是視覺變化；畫面上的大字一律是「這一關的重點」（rd.bigLine，沒有就用牌名）
+  const kickers = { trap: '⚡ 最後一擊！⚡', spell: '✨ 最後一擊！✨', monster: '🔥 最後一擊！🔥' };
 
-  document.getElementById('ygoUltEyeKicker').textContent = mt.kicker;
+  document.getElementById('ygoUltEyeKicker').textContent = isKnockout ? (kickers[kind] || kickers.trap) : '✨ 答對了 ✨';
   document.getElementById('ygoUltEyeLine').textContent = `${p.icon} ${p.title} 發動！`;
   document.getElementById('ygoUcfName').textContent = `${p.icon} ${p.title}`;
-  document.getElementById('ygoUcfOrb').textContent = (cardObj && cardObj._ygoAttr) || '陷';
-  document.getElementById('ygoUcfBar').textContent = (cardObj && cardObj._ygoBar) || 'SPELL SPEED 3';
+  document.getElementById('ygoUcfOrb').textContent = '✔';
+  document.getElementById('ygoUcfBar').textContent = `📜 ${(cardObj && cardObj.law) || '法源'}`;
   document.getElementById('ygoUcfArt').textContent = p.icon;
   document.getElementById('ygoUcfDesc').textContent = (cardObj && cardObj.desc) || rd.key;
 
-  document.getElementById('ygoUltSubEn').textContent = mt.sub;
-  document.getElementById('ygoUltMoveName').textContent = mt.move;
+  document.getElementById('ygoUltSubEn').textContent = '🔑 本關重點';
+  document.getElementById('ygoUltMoveName').textContent = rd.bigLine || p.title;
   document.getElementById('ygoUltCardCall').textContent = `「${p.title}」`;
 
   document.getElementById('ygoUltTargetName').textContent = rd.monsterName || nd.name;
   document.getElementById('ygoUltTargetImg').src = nd.img || './assets_art/boss_counter.webp';
-  document.getElementById('ygoUltLpLabel').textContent = isKnockout ? 'DIRECT ATTACK • TOTAL K.O.!' : 'OPPONENT LIFE POINTS';
-  document.getElementById('ygoUltLpDigits').textContent = `LP ${prevLp}`;
+  const leftBefore = Math.max(1, Math.round(prevLp / 4000 * nd.rounds.length));
+  document.getElementById('ygoUltLpLabel').textContent = '魔王還剩';
+  document.getElementById('ygoUltLpDigits').textContent = `${leftBefore} 題`;
 
   th.className = `active mode-${kind} stage-1`;
   runUltTheaterCanvas();
 
-  // ① 0.0s~1.1s：千年神器覺醒 ＋ 眼神分鏡 ＋ 3D 巨卡 540° 翻轉召喚 ＋ 主角熱血喊招 ➔ 接續魔王慘叫
+  // ① 0.0s~1.1s：光柱 ＋ 眼神分鏡 ＋ 3D 巨卡 540° 翻轉 ＋ 主角喊招 ➔ 接續魔王台詞
   playSfx('millennium_eye');
   const bRole = dutyBossVoice(nd);
   queueVoiceLines([[rd.heroShout, 'hero'], [rd.bossDefeat, bRole]]);
@@ -7925,7 +7982,7 @@ function playTvYugiohUltimate(cardObj, rd, nd, isKnockout, prevLp, nextLp) {
   ygoUlt.timers.push(setTimeout(() => { if (ygoUlt.active) playSfx('card_flip'); }, 240));
   ygoUlt.timers.push(setTimeout(() => { if (ygoUlt.active) playSfx('trap_open'); }, 580));
 
-  // ② 1.1s~2.4s：專屬書法大字 ＋ 全螢幕雷射/次元斬/噴射白光
+  // ② 1.1s~2.4s：書法大字（本關重點）＋ 全螢幕雷射/交叉斬/光砲
   ygoUlt.timers.push(setTimeout(() => {
     if (!ygoUlt.active) return;
     ygoUlt.stage = 2;
@@ -7934,7 +7991,7 @@ function playTvYugiohUltimate(cardObj, rd, nd, isKnockout, prevLp, nextLp) {
     playSfx('ult_charge');
     const w = window.innerWidth || 1280, h = window.innerHeight || 720;
     if (kind === 'trap') {
-      // 7 道彩虹神聖鏡力光束
+      // 7 道彩虹光束
       const cols = ['#e879f9', '#38bdf8', '#fde047', '#4ade80', '#f43f5e', '#a855f7', '#ffffff'];
       for (let i = 0; i < 7; i++) {
         ygoUlt.lasers.push({
@@ -7944,17 +8001,17 @@ function playTvYugiohUltimate(cardObj, rd, nd, isKnockout, prevLp, nextLp) {
         });
       }
     } else if (kind === 'spell') {
-      // 黑魔導・雙巨型十字次元斬
+      // 雙道交叉斬
       ygoUlt.lasers.push({ x1: w * 0.06, y1: h * 0.12, x2: w * 0.94, y2: h * 0.88, width: 38, life: 42, maxLife: 42, color: '#34d399' });
       ygoUlt.lasers.push({ x1: w * 0.94, y1: h * 0.12, x2: w * 0.06, y2: h * 0.88, width: 38, life: 42, maxLife: 42, color: '#fde047' });
     } else {
-      // 毀滅的噴射白光超巨龍光砲
+      // 單道巨型光砲
       ygoUlt.lasers.push({ x1: w * 0.05, y1: h * 0.85, x2: w * 0.95, y2: h * 0.15, width: 84, life: 44, maxLife: 44, color: '#38bdf8' });
     }
     setTimeout(() => { if (ygoUlt.active) playSfx(kind === 'spell' ? 'ult_slash' : 'ult_beam'); }, 180);
   }, 1100));
 
-  // ③ 2.4s~4.15s：對手怪獸巨卡龜裂粉碎 ＋ 64片 3D 碎片 ＋ 經典《遊戲王》LP 跳錶
+  // ③ 2.4s~4.15s：對手怪獸巨卡龜裂粉碎 ＋ 64片 3D 碎片 ＋ 計分框顯示擊敗
   ygoUlt.timers.push(setTimeout(() => {
     if (!ygoUlt.active) return;
     ygoUlt.stage = 3;
@@ -7986,20 +8043,16 @@ function playTvYugiohUltimate(cardObj, rd, nd, isKnockout, prevLp, nextLp) {
         });
       }
 
-      // 經典電子跳錶 LP 歸零演出
+      // 計分板歸零：魔王「還剩幾題」變成「擊敗！」
       playSfx('ygo_lp_drop');
       const lpEl = document.getElementById('ygoUltLpDigits');
-      const tStart = Date.now();
-      const dur = 680;
-      function rollLp() {
-        if (!ygoUlt.active) return;
-        const prog = Math.min(1, (Date.now() - tStart) / dur);
-        const cur = Math.round(prevLp + (nextLp - prevLp) * prog);
-        if (lpEl) lpEl.textContent = `LP ${cur}`;
-        if (prog < 1) ygoUlt.lpAnim = requestAnimationFrame(rollLp);
-        else if (lpEl) lpEl.textContent = isKnockout ? 'LP 0000 👑 K.O.!' : `LP ${nextLp}`;
+      const lblEl = document.getElementById('ygoUltLpLabel');
+      if (isKnockout) {
+        if (lblEl) lblEl.textContent = '本關完成';
+        if (lpEl) lpEl.textContent = '👑 擊敗魔王！';
+      } else if (lpEl) {
+        lpEl.textContent = `${Math.max(0, Math.round(nextLp / 4000 * nd.rounds.length))} 題`;
       }
-      rollLp();
     }, 340));
   }, 2400));
 
@@ -8009,7 +8062,7 @@ function playTvYugiohUltimate(cardObj, rd, nd, isKnockout, prevLp, nextLp) {
   }, 4250));
 }
 
-/* 回合過關（各題型共用）：電視《遊戲王》3段大招、扣魔王LP、講解＋🔑重點、收入卡冊 */
+/* 回合過關：前 3 題短特效、最後一擊 3 段大招；扣魔王血、🔑重點分行、收入卡冊 */
 function completeRound(cardOrName, lawText) {
   const nd = battle.node;
   const rd = nd.rounds[battle.roundIdx];
@@ -8017,7 +8070,7 @@ function completeRound(cardOrName, lawText) {
   const bossBox = document.getElementById('bossPortraitBox');
   const cardObj = (cardOrName && typeof cardOrName === 'object')
     ? cardOrName
-    : { name: String(cardOrName || '王牌反擊'), desc: rd.key || '', _ygoKind: 'trap', _ygoAttr: '陷', _ygoBar: 'SPELL SPEED 3' };
+    : { name: String(cardOrName || '法規牌'), desc: rd.key || '', law: lawText || '', _ygoKind: 'trap', _ygoAttr: '甲' };
 
   const prevLp = Math.round((battle.bossHp / battle.bossMaxHp) * 4000);
   battle.phase = 'resolved';
@@ -8026,25 +8079,27 @@ function completeRound(cardOrName, lawText) {
   const nextLp = Math.round((battle.bossHp / battle.bossMaxHp) * 4000);
   const knockedOut = battle.bossHp <= 0;
 
-  playTvYugiohUltimate(cardObj, rd, nd, knockedOut, prevLp, nextLp);
+  // 2026-11-23 使用者決定：完整大招只在每關最後一擊（打倒魔王）播放；前 3 題約 1 秒短特效，馬上看重點
+  if (knockedOut) playTvYugiohUltimate(cardObj, rd, nd, knockedOut, prevLp, nextLp);
+  else playQuickHit(rd, nd);
 
   const pb = document.getElementById('ygoPhaseBadge');
-  if (pb) { pb.className = 'ygo-phase-pill chain-active'; pb.textContent = '⚡ 反擊成功・法規奧義一擊必殺！'; }
+  if (pb) { pb.className = 'ygo-phase-pill chain-active'; pb.textContent = knockedOut ? '👑 打倒魔王！' : '✅ 答對了！'; }
   if (heroBox) heroBox.className = 'dl-hero-mini lunge-right';
-  if (bossBox) bossBox.className = 'dl-opp-card shattering';
+  if (bossBox) bossBox.className = knockedOut ? 'dl-opp-card shattering' : 'dl-opp-card hit-flash';
 
   setTimeout(() => {
     if (heroBox) heroBox.className = 'dl-hero-mini';
-    if (knockedOut && battle.active && bossBox) {
-      bossBox.className = 'dl-opp-card boss-ko';
-    }
+    if (!battle.active || !bossBox) return;
+    bossBox.className = knockedOut ? 'dl-opp-card boss-ko' : 'dl-opp-card';
   }, 650);
 
   const spk = document.getElementById('dlgSpeaker');
-  if (spk) { spk.className = 'dlg-speaker hero'; spk.textContent = `⚔️ 反擊成功！【${lawText}】`; }
+  if (spk) { spk.className = 'dlg-speaker hero'; spk.textContent = `✅ 答對了！依據：${lawText}`; }
   const dlg = document.getElementById('dlgText');
   if (dlg) {
-    dlg.innerHTML = `<div style="color:#14532d;font-weight:900;">🔑 重點：${rd.key}</div>`;
+    const lines = keyLinesOf(rd);
+    dlg.innerHTML = `<div class="dlg-key-title">🔑 重點</div><ul class="dlg-key-list">${lines.map(l => `<li>${l}</li>`).join('')}</ul>`;
   }
   updateBattleHpBars();
 
@@ -8057,7 +8112,31 @@ function completeRound(cardOrName, lawText) {
   const shortRelic = String(nd.relic || '').split('（')[0];
   document.getElementById('battleProceedSlot').innerHTML = isLast
     ? `<button class="btn-storybook-primary" style="padding:8px 16px;font-size:0.95rem;" onclick="winBattle()">🏆 勝利收下【${shortRelic}】(${starText(st)}) ▶</button>`
-    : `<button class="btn-storybook-primary" style="padding:8px 16px;font-size:0.95rem;" onclick="nextRound()">⚔️ 下一回合 ▶</button>`;
+    : `<button class="btn-storybook-primary" style="padding:8px 16px;font-size:0.95rem;" onclick="nextRound()">⚔️ 下一題 ▶</button>`;
+}
+
+/* 答對後的重點：把 rd.key 拆成一條一行。「；」一定拆；「・」要每段都夠長才拆，
+   免得把「選罷理監事・不動產・變更章程…」這種同一條規定裡的清單拆散。rd.key 原文不動（語音清單會用到）。 */
+function keyLinesOf(rd) {
+  const out = [];
+  String((rd && rd.key) || '').split('；').forEach(part => {
+    const seg = part.split('・').map(s => s.trim()).filter(Boolean);
+    if (seg.length > 1 && seg.every(s => s.length >= 5)) out.push(...seg);
+    else if (part.trim()) out.push(part.trim());
+  });
+  return out;
+}
+
+/* 前 3 題答對：約 1 秒的短特效，不蓋住畫面；主角喊招與魔王台詞照常念（隨時可按「下一題」） */
+function playQuickHit(rd, nd) {
+  playSfx('card_flip');
+  setTimeout(() => { if (battle.active) playSfx('trap_open'); }, 140);
+  const bossBox = document.getElementById('bossPortraitBox');
+  if (bossBox && bossBox.getBoundingClientRect) {
+    const r = bossBox.getBoundingClientRect();
+    spawnVfxBurst((r.left + r.width / 2) / (window.innerWidth || 1280), (r.top + r.height / 2) / (window.innerHeight || 720), '#4ade80', '✅ 答對了！');
+  }
+  queueVoiceLines([[rd.heroShout, 'hero'], [rd.bossDefeat, dutyBossVoice(nd)]]);
 }
 
 /* 答錯（各題型共用）：被魔王反擊、扣 HP（最低 10）、本關失誤 +1（影響星等）、這題標記「建議複習」 */
@@ -8069,11 +8148,11 @@ function registerMistake(rd) {
   playSfx('hurt');
   setTimeout(() => playSfx('lp_tick'), 160);
   const pb = document.getElementById('ygoPhaseBadge');
-  if (pb) { pb.className = 'ygo-phase-pill'; pb.textContent = '💥 連鎖失敗・遭到怪獸攻擊扣減 LP！'; }
+  if (pb) { pb.className = 'ygo-phase-pill'; pb.textContent = '❌ 這張不對，被怪獸反擊了'; }
   player.hp = Math.max(10, player.hp - 20);
   if (heroBox) heroBox.className = 'dl-hero-mini hit-flash';
   if (inner) { inner.classList.remove('hit-shake'); void inner.offsetWidth; inner.classList.add('hit-shake'); }
-  spawnVfxBurst(0.28, 0.56, '#ef4444', '💥 遭反擊 -800 LP');
+  spawnVfxBurst(0.28, 0.56, '#ef4444', '❌ 答錯了');
   setTimeout(() => { if (heroBox) heroBox.className = 'dl-hero-mini'; }, 420);
   const c = roundCard(rd);
   player.wrongLog.push({ boss: battle.node.name, law: c.law, desc: c.desc });
@@ -8098,8 +8177,8 @@ function resolveWrongCard(idx) {
     fp.className = 'dl-card-law ng';
   }
   showMentor(card.why
-    ? `<div>這張反擊沒對到點：${card.why}</div>`
-    : `<div>哎呀！這張牌被彈開了，請再對照法規選出正確牌！</div>`);
+    ? `<div>這張不對：${card.why}</div>`
+    : `<div>這張不對，再想想看。</div>`);
   battle.phase = 'choose';
 }
 
@@ -8137,7 +8216,7 @@ function usePotion() {
 
 function showBattleHint(msg) {
   document.getElementById('dlgSpeaker').className = 'dlg-speaker mentor';
-  document.getElementById('dlgSpeaker').textContent = '🧑‍🏫 選務督導導師・溫馨救援錦囊';
+  document.getElementById('dlgSpeaker').textContent = '🧑‍🏫 督導錦囊';
   document.getElementById('dlgText').textContent = msg;
 }
 
@@ -8593,7 +8672,7 @@ function openInventoryModal() {
     <div class="ledger-grid">
       ${LEDGER_CHESTS.map(c => {
         const got = player.openedChests.includes(c.id);
-        return `<div class="ledger-item ${got ? 'got' : ''}"><strong>${got ? '✅' : '🔒'} ${c.title}</strong><div style="color:#5c4d3c;margin-top:4px;">${got ? c.desc : '尚未點交（到大地圖點發光寶箱：逐項核對＋20 秒快問快答，答對才入庫）'}</div></div>`;
+        return `<div class="ledger-item ${got ? 'got' : ''}"><strong>${got ? '✅' : '🔒'} ${c.title}</strong><div style="color:#5c4d3c;margin-top:4px;">${got ? c.desc : '尚未點交（到大廳點「📦 移交清冊」：逐項核對＋20 秒快問快答，答對才入庫）'}</div></div>`;
       }).join('')}
     </div>
 
@@ -9744,14 +9823,14 @@ function dutyCardLabel(nd, rd) {
 /* =========================================================
    專職研習專屬模組：督導現場免掃碼直通 ＋ 模式切換 ＋ 32項跨年檢核表(可列印) ＋ 116修章＆勾稽 ＋ 真心話
 ========================================================= */
-let combatMode = 'theatre'; // 'theatre' = 遊戲王3D決鬥盤 | 'duty' = 櫃台值班審件
+let combatMode = 'theatre'; // 'theatre' = 3D 卡牌決鬥盤 | 'duty' = 櫃台值班審件（目前沒有入口）
 
 function toggleCombatMode() {
   combatMode = combatMode === 'duty' ? 'theatre' : 'duty';
   playSfx('click');
   const btn = document.getElementById('btnCombatMode');
-  if (btn) btn.textContent = combatMode === 'duty' ? '📋 模式：櫃台值班審件' : '⚡ 模式：遊戲王決鬥盤';
-  showMapToast(combatMode === 'duty' ? '📋 已切換為「專職櫃台值班審件」模式' : '⚡ 已切換為「《遊戲王》3D 決鬥盤卡牌對戰」模式！');
+  if (btn) btn.textContent = combatMode === 'duty' ? '📋 模式：櫃台值班審件' : '⚡ 模式：卡牌決鬥盤';
+  showMapToast(combatMode === 'duty' ? '📋 已切換為「專職櫃台值班審件」模式' : '⚡ 已切換為「3D 決鬥盤卡牌對戰」模式！');
 }
 
 function switchDutyToTheatre() {
@@ -9759,7 +9838,7 @@ function switchDutyToTheatre() {
   if (!nd) return;
   combatMode = 'theatre';
   const btn = document.getElementById('btnCombatMode');
-  if (btn) btn.textContent = '⚡ 模式：遊戲王決鬥盤';
+  if (btn) btn.textContent = '⚡ 模式：卡牌決鬥盤';
   exitDutyToMap(true);
   setTimeout(() => startBattle(nd), 120);
 }
